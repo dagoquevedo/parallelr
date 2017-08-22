@@ -13,8 +13,6 @@ if (length(args) > 0) {
     euclidea  = as.logical(args[4])
 }
 
-
-
 brownian = function(r) {
     position    = rep(0, dimension)  
     origin      = rep(0, dimension) 
@@ -118,4 +116,3 @@ axis(1, at=seq(5, 20, by=5),
     labels=seq(steps * 5, steps * 20, by=steps * 5))
 
 graphics.off()
-
