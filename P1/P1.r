@@ -84,11 +84,9 @@ for (duration in seq(steps, steps * 20, steps))
 
 stopCluster(cluster)
 
-
 # Plot
 
 png("P1_A.png")
-
 boxplot(data.matrix(data_dist), use.cols = FALSE,
        xlab="Dimension", ylab="Maximum distance", 
        main=(if (euclidea) "Euclidean" else "Manhattan"), 
@@ -96,9 +94,7 @@ boxplot(data.matrix(data_dist), use.cols = FALSE,
 
 graphics.off()
 
-
 png("P1_B.png")
-
 boxplot(data.matrix(data_orig), use.cols = FALSE,
        xlab="Dimension", ylab="Returns to origin", 
        main=(if (euclidea) "Euclidean" else "Manhattan"), 
@@ -107,7 +103,6 @@ boxplot(data.matrix(data_orig), use.cols = FALSE,
 graphics.off()
 
 png("P1_C.png")
-
 plot(data.matrix(data_sequ), xlab="Steps", ylab="Time (seg)",
     type="b", pch=19, col="red",xaxt = "n")
 lines(data.matrix(data_parl), pch=18, col="blue",
