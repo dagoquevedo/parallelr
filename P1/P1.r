@@ -4,6 +4,8 @@
 
 library(parallel)
 
+unlink("P1*.png")
+
 args = commandArgs(trailingOnly = TRUE)
 
 if (length(args) > 0) {
@@ -47,8 +49,8 @@ brownian = function(r) {
 
 data_dist = data.frame()
 data_orig = data.frame()
-cluster  = makeCluster(detectCores() - 1)
-duration = steps
+cluster   = makeCluster(detectCores() - 1)
+duration  = steps
 
 clusterExport(cluster, "duration")
 clusterExport(cluster, "euclidea")
