@@ -42,7 +42,7 @@ cpu_stats = function (core, cores) {
 				   	formatC(core,width=2,format="d",flag="0"),
 					formatC(r	,width=4,format="d",flag="0"), 
 					".png",sep="")    
-    png(output)
+    png(output, units = "in", res = 100, width = 6, height = 6)
 	barplot(cpu_st$V4, main = sprintf("CPU activity | Test using %d cores", core), 
 			xlab = "Cores", ylab="CPU used (%)", ylim = c(0,50), 
 			col=c("darkblue","red", "green", "yellow"))
@@ -73,13 +73,14 @@ for(core in 1:cores) {
 								c(core, 5, system.time(foreach(n = set_E, .combine = c) %dopar% is_prime(n))[3])
 					  )
 	}
+	
 	stopCluster(cl)
 }
 
 system(sprintf("convert -delay %d P3_B*.png P3_B.gif",10))
 unlink("P3_B*.png")
 
-png("P3_A.png",width = 2.5 * cores, height = 3.5, units = "in", res = 600)
+png("P3_A.png",width = 2.5 * cores, height = 3.5, units = "in", res = 200)
 par(mfrow=c(1,cores))
 
 for(core in 1:cores) {
@@ -90,17 +91,15 @@ for(core in 1:cores) {
 }
 graphics.off()
 
-png("P3_C.png")
+png("P3_C.png", width = 12, height = 6, units = "in", res = 200)
+par(mfrow=c(1,2))
 boxplot(result[, 3] ~ result[, 1], 
-		main = "Difference between cores", xlab = "Cores", ylab = "Time (s)")
-graphics.off()
+		main = "(a) Difference between cores", xlab = "Cores", ylab = "Time (s)")
 
-png("P3_D.png")
 boxplot(result[, 3] ~ result[, 2], 
-		main = "Difference between set of jobs", xlab = "Set of jobs", ylab = "Time (s)", xaxt = "n")
+		main = "(b) Difference between set of jobs", xlab = "Set of jobs", ylab = "Time (s)", xaxt = "n")
 axis(1, at=1:5, labels=toupper(letters[1:5]))
 graphics.off()
 
 kruskal.test(result[, 3] ~ result[, 1])
 kruskal.test(result[, 3] ~ result[, 2])
-
