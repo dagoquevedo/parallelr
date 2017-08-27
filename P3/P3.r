@@ -76,9 +76,8 @@ for(core in 1:cores) {
 	stopCluster(cl)
 }
 
-
-#system(sprintf("convert -delay %d P3_B*.png P3_B.gif",10))
-#unlink("P3_B*.png")
+system(sprintf("convert -delay %d P3_B*.png P3_B.gif",10))
+unlink("P3_B*.png")
 
 png("P3_A.png",width = 3 * cores, height = 4, units = "in", res = 1200)
 par(mfrow=c(1,cores))
