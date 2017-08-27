@@ -79,7 +79,7 @@ for(core in 1:cores) {
 system(sprintf("convert -delay %d P3_B*.png P3_B.gif",10))
 unlink("P3_B*.png")
 
-png("P3_A.png",width = 3 * cores, height = 4, units = "in", res = 1200)
+png("P3_A.png",width = 2.5 * cores, height = 3.5, units = "in", res = 600)
 par(mfrow=c(1,cores))
 
 for(core in 1:cores) {
@@ -87,9 +87,20 @@ for(core in 1:cores) {
 			main = sprintf("Number of cores: %d", core), xlab = "Set of jobs", ylab = "Time (s)", 
 			ylim = c(min(result[,3]), max(result[,3]) * 0.75), xaxt = "n")
 	axis(1, at=1:5, labels=toupper(letters[1:5]))	
-
 }
 graphics.off()
 
+png("P3_C.png")
+boxplot(result[, 3] ~ result[, 1], 
+		main = "Difference between cores", xlab = "Cores", ylab = "Time (s)")
+graphics.off()
+
+png("P3_D.png")
+boxplot(result[, 3] ~ result[, 2], 
+		main = "Difference between set of jobs", xlab = "Set of jobs", ylab = "Time (s)", xaxt = "n")
+axis(1, at=1:5, labels=toupper(letters[1:5]))
+graphics.off()
+
 kruskal.test(result[, 3] ~ result[, 1])
+kruskal.test(result[, 3] ~ result[, 2])
 
