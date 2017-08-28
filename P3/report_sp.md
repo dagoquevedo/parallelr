@@ -37,7 +37,7 @@ Como puede deducirse, el número de operaciones requeridas esta en función del 
 esta expresión crece cada vez más lentamente en función de ![f1]. Para el experimento, se establecen diferentes ordenamientos de números enteros a partir de un conjunto ordenado inicial ![f3], definido por:
 
 <p align="center">
-  <img src="https://latex.codecogs.com/gif.latex?\mathbb{Q}=\left&space;\{a,\dots,&space;b&space;\right&space;\}"/>
+  <img src="https://latex.codecogs.com/gif.latex?\mathbb{Q}=\left&space;\{a,\dots,&space;b&space;\right&space;\}"/>,
 </p>
 
 donde <img src="https://latex.codecogs.com/gif.latex?a"/> y <img src="https://latex.codecogs.com/gif.latex?b"/> son el inicio y el final del conjunto ordenado respectivamente, y <img src="https://latex.codecogs.com/gif.latex?a,b>0"/>, <img src="https://latex.codecogs.com/gif.latex?n\in\mathbb{Q}"/>. En este caso se utilizo una muestra a evaluar de 5,000 números enteros, entre los rangos 10,000 y 15,000. La siguiente tabla muestra los cinco conjuntos creados a partir de realizar variaciones en el ordenamiento del conjunto inicial <img src="https://latex.codecogs.com/gif.latex?\mathbb{Q}"/>.
