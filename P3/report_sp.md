@@ -98,4 +98,4 @@ A partir de la evidencia empírica y estadística mostrada en los resultados, se
 2. A. Burchard, J. Liebeherr, Y. Oh, S.H. Son. New Strategies for Assigning Real-Time Tasks to Multiprocessor. <i>Systems IEEE Transactions on Computers</i>, 44(12):1429-1442, 1995.
 3. W.H. Kruskal y W.A. Wallis. Use of ranks in one-criterion variance analysis. <i>Journal of the American Statistical Association</i> 47(260): 583-621, 1952.
 4. R. Calaway, S. Weston, D. Tenenbaum. Foreach Parallel Adaptor for the 'parallel' Package. <i>R Package</i>, https://cran.r-project.org/web/packages/doParallel/doParallel.pdf.
-5. S.E. Schaefer. Práctica 3: teoría de colas, <i>R paralelo: simulación & análisis de datos</i> http://elisa.dyndns-web.com/teaching/comp/par/p3.html.
+5. S.E. Schaeffer. Práctica 3: teoría de colas, <i>R paralelo: simulación & análisis de datos</i> http://elisa.dyndns-web.com/teaching/comp/par/p3.html.
