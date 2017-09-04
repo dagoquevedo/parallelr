@@ -1,5 +1,5 @@
 ## Introducción
-La teoría de colas es una área de las matemáticas dentro de la investigación de operaciones que estudia el comportamiento de las líneas de espera. En el campo computacional de nuestro interés, se relaciona con la asignación y el ordenamiento de las tareas a un determinado núcleo del CPU de tal manera de minimizar el tiempo total de ejecución de las tareas, este problema de ordenamiento se denomina programación de tareas (<i>scheduling</i>), teniendo la particularidad de ser en tiempo real (<i>Real-time scheduling problem</i>)[1,2].
+La teoría de colas es una área de las matemáticas dentro de la investigación de operaciones que estudia el comportamiento de las líneas de espera. En el campo computacional de nuestro interés, se relaciona con la asignación y el ordenamiento de las tareas a un determinado núcleo del CPU de tal manera de minimizar el tiempo total de ejecución de las tareas, este problema de ordenamiento se denomina programación de tareas (<i>scheduling</i>), teniendo la particularidad de ser en tiempo real (<i>Real-time scheduling problem</i>)[\[1,2\]](#bibliograf%C3%ADa).
 
 ## Objetivo
 El objetivo principal de esta práctica es el análisis sistemático de las diferencias en los tiempos de ejecución dada una ordenación de tareas y un número de núcleos disponibles. En específico: 
@@ -10,7 +10,7 @@ El objetivo principal de esta práctica es el análisis sistemático de las dife
 
 ## Experimentación
 ### Condiciones experimentales
-La operación a evaluar es la determinación de si un número entero <a href="https://www.codecogs.com/eqnedit.php?latex=n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?n" title="n" /></a>, es o no un número primo. El algoritmo base codificado en R es el siguiente [5]:
+La operación a evaluar es la determinación de si un número entero ![f1], es o no un número primo. El algoritmo base [\[5\]](#bibliograf%C3%ADa) codificado en R es el siguiente:
 
 ```
 is_prime = function(n) {
@@ -28,19 +28,19 @@ is_prime = function(n) {
     return(T)
 }
 ```
-Como puede deducirse, el número de operaciones requeridas esta en función del numero entero <a href="https://www.codecogs.com/eqnedit.php?latex=n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?n" title="n" /></a>; para determinar la primalidad de <a href="https://www.codecogs.com/eqnedit.php?latex=n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?n" title="n" /></a>, el mayor factor primo que se necesita no es mayor que <a href="https://www.codecogs.com/eqnedit.php?latex=\sqrt(n)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sqrt(n)" title="\sqrt(n)" /></a>, por lo cual el número de candidatos a factor primo es aproximadamente:
+Como puede deducirse, el número de operaciones requeridas esta en función del numero entero ![f1]; para determinar la primalidad de ![f1], el mayor factor primo que se necesita no es mayor que ![f2], por lo cual el número de candidatos a factor primo es aproximadamente:
 
 <p align="center">
-<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{n}{\ln\sqrt(n)-1}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{n}{\ln\sqrt(n)-1}" title="\frac{n}{\ln\sqrt(n)-1}" /></a>,
+  <img src="https://latex.codecogs.com/gif.latex?\frac{n}{\ln\sqrt&space;n-1}"/>,
 </p>
 
-esta expresión crece cada vez más lentamente en función de <a href="https://www.codecogs.com/eqnedit.php?latex=n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?n" title="n" /></a>. Para el experimento, se establecen diferentes ordenamientos de números enteros a partir de un conjunto ordenado inicial <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbb{Q}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbb{Q}" title="\mathbb{Q}" /></a>, definido por:
+esta expresión crece cada vez más lentamente en función de ![f1]. Para el experimento, se establecen diferentes ordenamientos de números enteros a partir de un conjunto ordenado inicial ![f3], definido por:
 
 <p align="center">
-<a href="https://www.codecogs.com/eqnedit.php?latex=\mathbb{Q}=\left&space;\{a,\dots,&space;b&space;\right&space;\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbb{Q}=\left&space;\{a,\dots,&space;b&space;\right&space;\}" title="\mathbb{Q}=\left \{a,\dots, b \right \}" /></a>,
+  <img src="https://latex.codecogs.com/gif.latex?\mathbb{Q}=\left&space;\{a,\dots,&space;b&space;\right&space;\}"/>,
 </p>
 
-donde <a href="https://www.codecogs.com/eqnedit.php?latex=a" target="_blank"><img src="https://latex.codecogs.com/gif.latex?a" title="a" /></a> y <a href="https://www.codecogs.com/eqnedit.php?latex=b" target="_blank"><img src="https://latex.codecogs.com/gif.latex?b" title="b" /></a> son el inicio y el final del conjunto ordenado respectivamente, y <a href="https://www.codecogs.com/eqnedit.php?latex=a,b>&space;0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?a,b>&space;0" title="a,b> 0" /></a>, <a href="https://www.codecogs.com/eqnedit.php?latex=n\in\mathbb{Q}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?n\in\mathbb{Q}" title="n\in\mathbb{Q}" /></a>. En este caso se utilizo una muestra a evaluar de 5,000 números enteros, entre los rangos 10,000 y 15,000. La siguiente tabla muestra los cinco conjuntos creados a partir de realizar variaciones en el ordenamiento del conjunto inicial <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbb{Q}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbb{Q}" title="\mathbb{Q}" /></a>.
+donde <img src="https://latex.codecogs.com/gif.latex?a"/> y <img src="https://latex.codecogs.com/gif.latex?b"/> son el inicio y el final del conjunto ordenado respectivamente, y <img src="https://latex.codecogs.com/gif.latex?a,b>0"/>, <img src="https://latex.codecogs.com/gif.latex?n\in\mathbb{Q}"/>. En este caso se utilizo una muestra a evaluar de 5,000 números enteros, entre los rangos 10,000 y 15,000. La siguiente tabla muestra los cinco conjuntos creados a partir de realizar variaciones en el ordenamiento del conjunto inicial <img src="https://latex.codecogs.com/gif.latex?\mathbb{Q}"/>.
 
 | Conjunto| Ordenamiento        |
 | :---:   |     :---            |
@@ -53,7 +53,7 @@ donde <a href="https://www.codecogs.com/eqnedit.php?latex=a" target="_blank"><im
 El experimento consiste en determinar para cada número entero (en el orden de cada conjunto) si es o no un número primo, usando el algoritmo `is_prime`, variando en cada ejecución el número de núcleos habilitados en el <i>cluster</i> y realizando 30 repeticiones de la totalidad del experimento. En cada ejecución, se genera una tupla con la siguiente estructura `(core, conjunto, tiempo)`.
 
 ### Condiciones computacionales
-Se hace uso de una instancia SO Linux (Ubuntu 16.04) 64-bits, con procesador Intel (R) Core (TM) i7-5600U CPU @ 2.60 GHz y 12 GB de memoria RAM con 2 núcleos y 4 procesadores lógicos. La aplicación se ha codificado en R, haciendo uso del paquete `doParallel` [4] que incluye la función `foreach`, la cual permite la ejecución paralela de los procesos a partir de la declaración de un <i>cluster</i> con <a href="https://www.codecogs.com/eqnedit.php?latex=k" target="_blank"><img src="https://latex.codecogs.com/gif.latex?k" title="k" /></a> núcleos activos.
+Se hace uso de una instancia SO Linux (Ubuntu 16.04) 64-bits, con procesador Intel (R) Core (TM) i7-5600U CPU @ 2.60 GHz y 12 GB de memoria RAM con 2 núcleos y 4 procesadores lógicos. La aplicación se ha codificado en R, haciendo uso del paquete `doParallel` [\[4\]](#bibliograf%C3%ADa) que incluye la función `foreach`, la cual permite la ejecución paralela de los procesos a partir de la declaración de un <i>cluster</i> con <img src="https://latex.codecogs.com/gif.latex?k"/> núcleos activos.
 
 ### Resultados
 La Figura 1 representa el resultado de la ejecución con 30 repeticiones, divido por el número de núcleos disponibles. La tendencia que se muestra es la de un decrecimiento en los tiempo de computo conforme se incrementa el número de núcleos disponibles en el <i>cluster</i>, siendo esta tendencia menor entre el incremento de 3 a 4.
@@ -77,14 +77,14 @@ La Figura 3 muestra la actividad de los núcleos durante la ejecución de la exp
   <b>Figura 3.</b> Actividad de los núcleos del CPU durante la ejecución del experimento.
 </p>
 
-Para confirmar las conclusiones del análisis gráfico se procede a realizar un análisis estadístico, formulando las siguientes hipótesis alternativas, <a href="https://www.codecogs.com/eqnedit.php?latex=H_a" target="_blank"><img src="https://latex.codecogs.com/gif.latex?H_a" title="H_a" /></a>: El número de núcleos disponibles tiene un efecto significativo en el tiempo de computo. <a href="https://www.codecogs.com/eqnedit.php?latex=H_b" target="_blank"><img src="https://latex.codecogs.com/gif.latex?H_b" title="H_b" /></a>: El ordenamiento del conjunto de números enteros tiene un efecto significativo en el tiempo de computo. Bajo la posibilidad de que la distribución de la muestra no cumpla con las condiciones de normalidad, se opta por usar una prueba no paramétrica de Kruskal-Wallis [3]. Se establece un nivel de significancia <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha&space;=&space;5\%" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha&space;=&space;5\%" title="\alpha = 5\%" /></a>. La siguiente tabla muestra el resultado de este análisis.
+Para confirmar las conclusiones del análisis gráfico se procede a realizar un análisis estadístico, formulando las siguientes hipótesis alternativas, ![f4]: El número de núcleos disponibles tiene un efecto significativo en el tiempo de computo. ![f5]: El ordenamiento del conjunto de números enteros tiene un efecto significativo en el tiempo de computo. Bajo la posibilidad de que la distribución de la muestra no cumpla con las condiciones de normalidad, se opta por usar una prueba no paramétrica de Kruskal-Wallis [\[3\]](#bibliograf%C3%ADa). Se establece un nivel de significancia ![f6]. La siguiente tabla muestra el resultado de este análisis.
 
 | Hipótesis | <i>p</i>-value |
 | :---:  | :--- |
-| <a href="https://www.codecogs.com/eqnedit.php?latex=H_b" target="_blank"><img src="https://latex.codecogs.com/gif.latex?H_a" title="H_a" /></a> | 2.45e-16 |
-| <a href="https://www.codecogs.com/eqnedit.php?latex=H_b" target="_blank"><img src="https://latex.codecogs.com/gif.latex?H_b" title="H_b" /></a> | 0.148234 |
+| ![f4] | 2.45e-16 |
+| ![f5] | 0.148234 |
 
-En el caso de la hipótesis alternativa <a href="https://www.codecogs.com/eqnedit.php?latex=H_b" target="_blank"><img src="https://latex.codecogs.com/gif.latex?H_a" title="H_a" /></a>, el <i>p</i>-value que se obtiene es lo suficientemente menor respecto el nivel de significancia <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha&space;=&space;5\%" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha&space;=&space;5\%" title="\alpha = 5\%" /></a>, por lo que se rechaza la hipótesis nula y se acepta la hipótesis alternativa. Por el contrario la hipótesis alternativa <a href="https://www.codecogs.com/eqnedit.php?latex=H_b" target="_blank"><img src="https://latex.codecogs.com/gif.latex?H_b" title="H_b" /></a> se rechaza, al obtener un valor de <i>p</i>-value mayor al nivel de significancia. Por lo anterior, los resultados estadísticos confirman el análisis gráfico del experimento.
+En el caso de la hipótesis alternativa ![f4], el <i>p</i>-value que se obtiene es lo suficientemente menor respecto el nivel de significancia ![f6], por lo que se rechaza la hipótesis nula y se acepta la hipótesis alternativa. Por el contrario la hipótesis alternativa ![f5] se rechaza, al obtener un valor de <i>p</i>-value mayor al nivel de significancia. Por lo anterior, los resultados estadísticos confirman el análisis gráfico del experimento.
 
 ## Conclusiones
 A partir de la evidencia empírica y estadística mostrada en los resultados, se puede concluir lo siguiente:
@@ -96,6 +96,13 @@ A partir de la evidencia empírica y estadística mostrada en los resultados, se
 #### Bibliografía
 1. S.K. Dhall y C.L. Liu, On a Real-Time Scheduling Problem, <i>Operations Research</i>, 26:127-140, 1978.
 2. A. Burchard, J. Liebeherr, Y. Oh, S.H. Son. New Strategies for Assigning Real-Time Tasks to Multiprocessor. <i>Systems IEEE Transactions on Computers</i>, 44(12):1429-1442, 1995.
-3. W.H. Kruskal y W.A. Wallis. Use of ranks in one-criterion variance analysis. <i>Journal of the American Statistical Association</i> 47(260): 583-621, 1952.
+3. W.H. Kruskal y W.A. Wallis. Use of ranks in one-criterion variance analysis. <i>Journal of the American Statistical Association</i>, 47(260): 583-621, 1952.
 4. R. Calaway, S. Weston, D. Tenenbaum. Foreach Parallel Adaptor for the 'parallel' Package. <i>R Package</i>, https://cran.r-project.org/web/packages/doParallel/doParallel.pdf.
-5. S.E. Schaefer. Práctica 3: teoría de colas, <i>R paralelo: simulación & análisis de datos</i> http://elisa.dyndns-web.com/teaching/comp/par/p3.html.
+5. S.E. Schaeffer. Práctica 3: teoría de colas, <i>R paralelo: simulación & análisis de datos</i>, http://elisa.dyndns-web.com/teaching/comp/par/p3.html.
+
+[f1]: https://latex.codecogs.com/gif.latex?n
+[f2]: https://latex.codecogs.com/gif.latex?\sqrt&space;n
+[f3]: https://latex.codecogs.com/gif.latex?\mathbb{Q}
+[f4]: https://latex.codecogs.com/gif.latex?H_a
+[f5]: https://latex.codecogs.com/gif.latex?H_b
+[f6]: https://latex.codecogs.com/gif.latex?\alpha=5\\%
