@@ -1,18 +1,18 @@
 ## Introducción
 
-Los diagramas de Voronoi [\[1,2\]](#bibliograf%C3%ADa) se encuentran entre las más importantes estructuras en la geometría computacional, este codifica la información de proximidad entre los elementos. Sea <img src="https://latex.codecogs.com/gif.latex?P=\{p_1,\dots,p_n\}"/> un conjunto de puntos en el plano (o en cualquier espacio <img src="https://latex.codecogs.com/gif.latex?d"/>-dimensional), los cuales llamaremos celda. Definimos como <img src="https://latex.codecogs.com/gif.latex?\mathcal{V}(p_i)"/>, la celda de Voronoi para <img src="https://latex.codecogs.com/gif.latex?p_i"/>, como el conjunto de puntos <img src="https://latex.codecogs.com/gif.latex?k"/> en el plano que están más cerca de <img src="https://latex.codecogs.com/gif.latex?p_i"/> que de cualquier otro sitio. Es decir la celda de Voronoi se define por
+Los diagramas de Voronoi [\[1,2\]](#bibliograf%C3%ADa) se encuentran entre las más importantes estructuras en la geometría computacional, este codifica la información de proximidad entre los elementos. Sea <img src="https://latex.codecogs.com/gif.latex?P=\{p_1,\dots,p_n\}"/> un conjunto de puntos en el plano (o en cualquier espacio <img src="https://latex.codecogs.com/gif.latex?d"/>-dimensional), los cuales llamaremos celda. Definimos como <img src="https://latex.codecogs.com/gif.latex?\mathcal{V}(p_i)"/>, la celda de Voronoi para <img src="https://latex.codecogs.com/gif.latex?p_i"/>, como el conjunto de puntos ![f2] en el plano que están más cerca de <img src="https://latex.codecogs.com/gif.latex?p_i"/> que de cualquier otro sitio. Es decir la celda de Voronoi se define por
 
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?\mathcal{V}(p_i)&space;=&space;\{k:&space;\left&space;\|&space;p_i&space;-&space;k&space;\right&space;\|&space;<&space;\left&space;\|&space;p_j&space;-&space;k&space;\right&space;\|,&space;\forall&space;j\neq&space;i&space;\}"/>,
 </p>
 
-donde <img src="https://latex.codecogs.com/gif.latex?\left\|p_i-k\right\|"/> denota la distancia euclídea entre los puntos <img src="https://latex.codecogs.com/gif.latex?p_i"/> y <img src="https://latex.codecogs.com/gif.latex?k"/>. Si bien el diagrama de Voronoi puede definirse sobre cualquier métrica y en cualquier dimensión, en esta práctica nos enfocaremos en el caso planar y Euclidiano, donde se representará la zona por una matriz <img src="https://latex.codecogs.com/gif.latex?n\times&space;n"/> y las coordenadas serán entonces números enteros en <img src="https://latex.codecogs.com/gif.latex?\[1,n\]"/>.
+donde <img src="https://latex.codecogs.com/gif.latex?\left\|p_i-k\right\|"/> denota la distancia euclídea entre los puntos <img src="https://latex.codecogs.com/gif.latex?p_i"/> y ![f2]. Si bien el diagrama de Voronoi puede definirse sobre cualquier métrica y en cualquier dimensión, en esta práctica nos enfocaremos en el caso planar y Euclidiano, donde se representará la zona por una matriz <img src="https://latex.codecogs.com/gif.latex?n\times&space;n"/> y las coordenadas serán entonces números enteros en <img src="https://latex.codecogs.com/gif.latex?\[1,n\]"/>.
 
 ## Objetivo
 
 El objetivo principal de esta práctica es el análisis sistemático del efecto que el número de semillas y el tamaño de la zona tienen en la distribución de los largos de las grietas. Adicional a lo anterior:
 
-1. Esparcir las <img src="https://latex.codecogs.com/gif.latex?k"/> semillas con otra distribuciones probabilística y examinar el efecto que tiene cada una de ellas en la asignación de las celdas.
+1. Esparcir las ![f2] semillas con otra distribuciones probabilística y examinar el efecto que tiene cada una de ellas en la asignación de las celdas.
 
 2. Lograr el efecto de crecimiento de las celdas alrededor de las semillas que aparecen en distintos momentos y examinar los cambios producidos en el fenómeno de propagación de grietas.
 
@@ -46,11 +46,11 @@ cell =  function(pos) {
 
 A continuación se establecen las condiciones de diseño y definición de experimentos para satisfacer los objetivos y  analizar los resultados de esta práctica.
 
-* Para analizar el efecto del número de semillas <img src="https://latex.codecogs.com/gif.latex?k"/> y el tamaño de la zona dada por <img src="https://latex.codecogs.com/gif.latex?n"/>, se establece entonces tamaños de <img src="https://latex.codecogs.com/gif.latex?n\in\[50,200]"/> discretizado a 50 unidades y <img src="https://latex.codecogs.com/gif.latex?k\in\[4,12]"/> discretizado a 4 unidades. El experimento es entonces una serie de ejecuciones con las posibles combinaciones de los conjuntos discretizados <img src="https://latex.codecogs.com/gif.latex?n"/> y <img src="https://latex.codecogs.com/gif.latex?k"/> cómo parámetros. Se realiza un análisis estadístico para reafirmar las conclusiones empíricas.
+* Para analizar el efecto del número de semillas ![f2] y el tamaño de la zona dada por ![f1], se establece entonces tamaños de <img src="https://latex.codecogs.com/gif.latex?n\in\[50,200]"/> discretizado a 50 unidades y <img src="https://latex.codecogs.com/gif.latex?k\in\[4,12]"/> discretizado a 4 unidades. El experimento es entonces una serie de ejecuciones con las posibles combinaciones de los conjuntos discretizados ![f1] y ![f2] cómo parámetros. Se realiza un análisis estadístico para reafirmar las conclusiones empíricas.
 
-* Se utilizan tres distribuciones probabilísticas para esparcir las <img src="https://latex.codecogs.com/gif.latex?k"/> semillas en el plano cartesiano: (a), Distribución de Poisson con un <img src="https://latex.codecogs.com/gif.latex?\lambda=n/2"/>. (b) Distribución Binomial con un tamaño <img src="https://latex.codecogs.com/gif.latex?l=n/4"/>, y una probabilidad <img src="https://latex.codecogs.com/gif.latex?x=50\%"/>, (c) Distribución normal, la cual queda implicita con el uso de la función `sample`. Se realiza una única ejecución por cada distribución con <img src="https://latex.codecogs.com/gif.latex?k=12"/> y <img src="https://latex.codecogs.com/gif.latex?n=300"/>.
+* Se utilizan tres distribuciones probabilísticas para esparcir las ![f2] semillas en el plano cartesiano: (a), Distribución de Poisson con un <img src="https://latex.codecogs.com/gif.latex?\lambda=n/2"/>. (b) Distribución Binomial con un tamaño <img src="https://latex.codecogs.com/gif.latex?l=n/4"/>, y una probabilidad <img src="https://latex.codecogs.com/gif.latex?x=50\%"/>, (c) Distribución normal, la cual queda implicita con el uso de la función `sample`. Se realiza una única ejecución por cada distribución con <img src="https://latex.codecogs.com/gif.latex?k=12"/> y <img src="https://latex.codecogs.com/gif.latex?n=300"/>.
 
-* Para lograr el efecto de crecimiento de las celdas alrededor de las semillas se modifica la definición de la celda de Voronoi de tal manera que contemple un radio <img src="https://latex.codecogs.com/gif.latex?r_k"/> para cada semilla <img src="https://latex.codecogs.com/gif.latex?k"/> por lo que cada <img src="https://latex.codecogs.com/gif.latex?p_i"/> que estén dentro de este radio se asigne a una semilla <img src="https://latex.codecogs.com/gif.latex?k"/>. se realiza una única ejecución con <img src="https://latex.codecogs.com/gif.latex?k=12"/> y <img src="https://latex.codecogs.com/gif.latex?n=400"/>. La celda de Voronoi se define ahora como sigue
+* Para lograr el efecto de crecimiento de las celdas alrededor de las semillas se modifica la definición de la celda de Voronoi de tal manera que contemple un radio <img src="https://latex.codecogs.com/gif.latex?r_k"/> para cada semilla ![f2] por lo que cada <img src="https://latex.codecogs.com/gif.latex?p_i"/> que estén dentro de este radio se asigne a una semilla ![f2]. se realiza una única ejecución con <img src="https://latex.codecogs.com/gif.latex?k=12"/> y <img src="https://latex.codecogs.com/gif.latex?n=400"/>. La celda de Voronoi se define ahora como sigue
 
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?\mathcal{V}(p_i)&space;=&space;\{k:&space;\left&space;\|&space;p_i&space;-&space;k&space;\right&space;\|&space;<&space;r_k,&space;\forall&space;j\neq&space;i&space;\}"/>.
@@ -68,7 +68,7 @@ La Figura 1 muestra la comparación del tamaño de las grietas generadas para ca
 <b>Figura 1.</b> Comparación de largo de las grietas respecto al tamaño del la matriz y número de semillas.
 </p>
 
-Para confirmar las conclusiones del análisis gráfico se procede a realizar un análisis estadístico, formulando las siguientes hipótesis alternativas, ![f4]: El tamaño de la matriz dado por <img src="https://latex.codecogs.com/gif.latex?n"/> tiene un efecto sobre el tamaño de las grietas. ![f5]: El número de semillas dado por <img src="https://latex.codecogs.com/gif.latex?k"/> tiene un efecto sobre el tamaño de las grietas. Bajo la posibilidad de que la distribución de la muestra no cumpla con las condiciones de normalidad, se opta por usar una prueba no paramétrica de Kruskal-Wallis [\[5\]](#bibliograf%C3%ADa). Se establece un nivel de significancia ![f6]. La siguiente tabla muestra el resultado de este análisis.
+Para confirmar las conclusiones del análisis gráfico se procede a realizar un análisis estadístico, formulando las siguientes hipótesis alternativas, ![f4]: El tamaño de la matriz dado por <img src="https://latex.codecogs.com/gif.latex?n"/> tiene un efecto sobre el tamaño de las grietas. ![f5]: El número de semillas dado por ![f2] tiene un efecto sobre el tamaño de las grietas. Bajo la posibilidad de que la distribución de la muestra no cumpla con las condiciones de normalidad, se opta por usar una prueba no paramétrica de Kruskal-Wallis [\[5\]](#bibliograf%C3%ADa). Se establece un nivel de significancia ![f6]. La siguiente tabla muestra el resultado de este análisis.
 
 | Hipótesis | <i>p</i>-value |
 | :---:  | :--- |
@@ -112,7 +112,8 @@ A partir de la evidencia empírica y estadística mostrada en los resultados de 
 4. R. Calaway, S. Weston, D. Tenenbaum. Foreach Parallel Adaptor for the 'parallel' Package. <i>R Package</i>, https://cran.r-project.org/web/packages/doParallel/doParallel.pdf.
 5. W.H. Kruskal y W.A. Wallis. Use of ranks in one-criterion variance analysis. <i>Journal of the American Statistical Association</i>, 47(260): 583-621, 1952.
 
-
+[f1]: https://latex.codecogs.com/gif.latex?n
+[f2]: https://latex.codecogs.com/gif.latex?k
 [f4]: https://latex.codecogs.com/gif.latex?H_a
 [f5]: https://latex.codecogs.com/gif.latex?H_b
 [f6]: https://latex.codecogs.com/gif.latex?\alpha=5\\%
