@@ -79,14 +79,14 @@ En el caso de la hipótesis alternativa ![f4], el <i>p</i>-value que se obtiene 
 
 La siguiente imagen muestra la generación de un diagrama de Voronoi con una selección de las semillas bajo una distribución normal en un espacio <img src="https://latex.codecogs.com/gif.latex?n\times&space;n"/>.
 <p align="center">
-<img src="https://github.com/dagoquevedo/parallelr/blob/master/P4/img/P4_A_02_2.png" height="40%" width="40%"/><br>
+<img src="https://github.com/dagoquevedo/parallelr/blob/master/P4/img/P4_A_02_1.png" height="40%" width="40%"/><br>
 <b>Figura 2.</b> Diagrama de Voronoi con semillas esparcidas bajo una distribución Normal.
 </p>
 
 La siguiente imagen muestra la generación de un diagrama de Voronoi con una selección de las semillas bajo una distribución de Poisson en un espacio <img src="https://latex.codecogs.com/gif.latex?n\times&space;n"/>. Se observa como las semillas están distribuidas uniformemente en el área central de la matriz, lo que ocasiona un efecto de embudo en la figura resultante.
  
 <p align="center">
-<img src="https://github.com/dagoquevedo/parallelr/blob/master/P4/img/P4_A_02_1.png" height="40%" width="40%"/><br>
+<img src="https://github.com/dagoquevedo/parallelr/blob/master/P4/img/P4_A_02_2.png" height="40%" width="40%"/><br>
 <b>Figura 3.</b> Diagrama de Voronoi con semillas esparcidas bajo una distribución de Poisson.
 </p>
 
