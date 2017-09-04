@@ -64,7 +64,7 @@ Se hace uso de una instancia SO Linux (Ubuntu 16.04) 64-bits, con procesador Int
 La Figura 1 muestra la comparación del tamaño de las grietas generadas para cada combinación <img src="https://latex.codecogs.com/gif.latex?(n,k)"/>. Se observa que el tamaño de la matriz si tiene un efecto en el tamaño de las grietas más no así el número de semillas distribuidas, en este caso bajo una distribución normal.
 
 <p align="center">
-<img src="https://github.com/dagoquevedo/parallelr/blob/master/P4/P4_A_04.png"/>
+<img src="https://github.com/dagoquevedo/parallelr/blob/master/P4/img/P4_A_04.png"/>
 <b>Figura 1.</b> Comparación de largo de las grietas respecto al tamaño del la matriz y número de semillas.
 </p>
 
@@ -79,21 +79,21 @@ En el caso de la hipótesis alternativa ![f4], el <i>p</i>-value que se obtiene 
 
 La siguiente imagen muestra la generación de un diagrama de Voronoi con una selección de las semillas bajo una distribución normal en un espacio <img src="https://latex.codecogs.com/gif.latex?n\times&space;n"/>.
 <p align="center">
-<img src="https://github.com/dagoquevedo/parallelr/blob/master/P4/P4_A_02_2.png" height="40%" width="40%"/><br>
+<img src="https://github.com/dagoquevedo/parallelr/blob/master/P4/img/P4_A_02_2.png" height="40%" width="40%"/><br>
 <b>Figura 2.</b> Diagrama de Voronoi con semillas esparcidas bajo una distribución Normal.
 </p>
 
 La siguiente imagen muestra la generación de un diagrama de Voronoi con una selección de las semillas bajo una distribución de Poisson en un espacio <img src="https://latex.codecogs.com/gif.latex?n\times&space;n"/>. Se observa como las semillas están distribuidas uniformemente en el área central de la matriz, lo que ocasiona un efecto de embudo en la figura resultante.
  
 <p align="center">
-<img src="https://github.com/dagoquevedo/parallelr/blob/master/P4/P4_A_02_1.png" height="40%" width="40%"/><br>
+<img src="https://github.com/dagoquevedo/parallelr/blob/master/P4/img/P4_A_02_1.png" height="40%" width="40%"/><br>
 <b>Figura 3.</b> Diagrama de Voronoi con semillas esparcidas bajo una distribución de Poisson.
 </p>
 
 La Figura 4 muestra una animación de crecimiento de las celdas alrededor de las semillas, las cuales aparecen en momentos distintos durante la ejecución.
 
 <p align="center">
-<img src="https://github.com/dagoquevedo/parallelr/blob/master/P4/P4_B_02.gif" height="40%" width="40%"/><br>
+<img src="https://github.com/dagoquevedo/parallelr/blob/master/P4/img/P4_B_02.gif" height="40%" width="40%"/><br>
 <b>Figura 4.</b> Diagrama de Voronoi con un crecimiento de las celdas alrededor de las semillas.
 </p>
 
