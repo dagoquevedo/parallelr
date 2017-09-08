@@ -13,7 +13,6 @@ donde <img src="https://latex.codecogs.com/gif.latex?\left\|p_i-k\right\|"/> den
 El objetivo principal de esta práctica es el análisis sistemático del efecto que el número de semillas y el tamaño de la zona tienen en la distribución de los largos de las grietas. Adicional a lo anterior:
 
 1. Esparcir las ![f2] semillas con otra distribuciones probabilística y examinar el efecto que tiene cada una de ellas en la asignación de las celdas.
-
 2. Lograr el efecto de crecimiento de las celdas alrededor de las semillas que aparecen en distintos momentos y examinar los cambios producidos en el fenómeno de propagación de grietas.
 
 ## Experimentación
@@ -57,6 +56,7 @@ A continuación se establecen las condiciones de diseño y definición de experi
 </p>
 
 ### Condiciones computacionales
+
 Se hace uso de una instancia SO Linux (Ubuntu 16.04) 64-bits, con procesador Intel (R) Core (TM) i7-5600U CPU @ 2.60 GHz y 12 GB de memoria RAM con 2 núcleos y 4 procesadores lógicos. La aplicación se ha codificado en R, haciendo uso del paquete `doParallel` [\[4\]](#bibliograf%C3%ADa) que incluye la función `foreach`.
 
 ## Resultados
@@ -68,14 +68,16 @@ La Figura 1 muestra la comparación del tamaño de las grietas generadas para ca
 <b>Figura 1.</b> Comparación de largo de las grietas respecto al tamaño del la matriz y número de semillas.
 </p>
 
-Para confirmar las conclusiones del análisis gráfico se procede a realizar un análisis estadístico, formulando las siguientes hipótesis alternativas, ![f4]: El tamaño de la matriz dado por <img src="https://latex.codecogs.com/gif.latex?n"/> tiene un efecto sobre el tamaño de las grietas. ![f5]: El número de semillas dado por ![f2] tiene un efecto sobre el tamaño de las grietas. Bajo la posibilidad de que la distribución de la muestra no cumpla con las condiciones de normalidad, se opta por usar una prueba no paramétrica de Kruskal-Wallis [\[5\]](#bibliograf%C3%ADa). Se establece un nivel de significancia ![f6]. La siguiente tabla muestra el resultado de este análisis.
+Para confirmar las conclusiones del análisis gráfico se procede a realizar un análisis estadístico, formulando las siguientes hipótesis alternativas, ![f4]: El tamaño de la matriz dado por <img src="https://latex.codecogs.com/gif.latex?n"/> tiene un efecto sobre el tamaño de las grietas. ![f5]: El número de semillas dado por ![f2] tiene un efecto sobre el tamaño de las grietas. Bajo la posibilidad de que la distribución de la muestra no cumpla con las condiciones de normalidad, se opta por usar una prueba no paramétrica de Kruskal-Wallis [\[5\]](#bibliograf%C3%ADa). Se establece un nivel de significancia ![f6]. La tabla 1 muestra el resultado de este análisis.
 
-| Hipótesis | <i>p</i>-value |
+<b>Tabla 1</b>. Resultados de la prueba de Kruskal-Wallis 
+
+| Hipótesis | <i>p</i>-valor |
 | :---:  | :--- |
 | ![f4] | 1.338e-08 |
 | ![f5] | 0.3038763 |
 
-En el caso de la hipótesis alternativa ![f4], el <i>p</i>-value que se obtiene es lo suficientemente menor respecto el nivel de significancia ![f6], por lo que se rechaza la hipótesis nula y se acepta la hipótesis alternativa. Por el contrario la hipótesis alternativa ![f5] se rechaza, al obtener un valor de <i>p</i>-value mayor al nivel de significancia. Por lo anterior, los resultados estadísticos confirman el análisis gráfico del experimento.
+En el caso de la hipótesis alternativa ![f4], el <i>p</i>-valor que se obtiene es lo suficientemente menor respecto el nivel de significancia ![f6], por lo que se rechaza la hipótesis nula y se acepta la hipótesis alternativa. Por el contrario la hipótesis alternativa ![f5] se rechaza, al obtener un valor de <i>p</i>-valor mayor al nivel de significancia. Por lo anterior, los resultados estadísticos confirman el análisis gráfico del experimento.
 
 La siguiente imagen muestra la generación de un diagrama de Voronoi con una selección de las semillas bajo una distribución normal en un espacio <img src="https://latex.codecogs.com/gif.latex?n\times&space;n"/>.
 <p align="center">
@@ -107,9 +109,9 @@ A partir de la evidencia empírica y estadística mostrada en los resultados de 
 
 #### Bibliografía
 1. M. Berg, O. Cheong, M.V. Kreveld and M. Overmars. <i>Computational Geometry: Algorithms and Applications</i>. Springer, 3ra edición, 2008.
-2. E.A. Rodríguez Tello. Diagramas de Voronoi, <i>Notas de clase</i>, Cinvestav, 2013. http://www.tamps.cinvestav.mx/~ertello/gc/sesion16.pdf
-3. S.E. Schaeffer. Práctica 4: Diagramas de Voronoi, <i>R paralelo: simulación & análisis de datos</i>, http://elisa.dyndns-web.com/teaching/comp/par/p4.html.
-4. R. Calaway, S. Weston, D. Tenenbaum. Foreach Parallel Adaptor for the 'parallel' Package. <i>R Package</i>, https://cran.r-project.org/web/packages/doParallel/doParallel.pdf.
+2. E.A. Rodríguez Tello. Diagramas de Voronoi, <i>Notas de clase</i>, Cinvestav, 2013, [\[url\]](http://www.tamps.cinvestav.mx/~ertello/gc/sesion16.pdf).
+3. S.E. Schaeffer. Práctica 4: Diagramas de Voronoi, <i>R paralelo: simulación & análisis de datos</i>, [\[url\]](http://elisa.dyndns-web.com/teaching/comp/par/p4.html).
+4. R. Calaway, S. Weston, D. Tenenbaum. Foreach Parallel Adaptor for the 'parallel' Package. <i>R Package</i>, [\[url\]](https://cran.r-project.org/web/packages/doParallel/doParallel.pdf).
 5. W.H. Kruskal y W.A. Wallis. Use of ranks in one-criterion variance analysis. <i>Journal of the American Statistical Association</i>, 47(260): 583-621, 1952.
 
 [f1]: https://latex.codecogs.com/gif.latex?n
