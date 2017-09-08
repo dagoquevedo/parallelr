@@ -99,7 +99,7 @@ for(N in c(50,100,1000,5000,10000)) {
 	df <- rbind(df, data.frame(x = rep(1:M), y = result.method.2$valor, Variable = "Método 2"))
 
 	output = paste("img/P5_C",formatC(N,width=4,format="d",flag="0"),".png",sep="")  
-	png(output, width = 12, height = 4, units = "in", res = 200)
+	png(output, width = 10, height = 4, units = "in", res = 200)
 	
 	grid.newpage()
 	pushViewport(viewport(layout = grid.layout(1, 2)))
