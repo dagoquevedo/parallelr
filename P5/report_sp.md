@@ -1,6 +1,6 @@
 ## Introducción
 
-La simulación de Monte-Carlo fue creada para integrales que no se pueden resolver por métodos analíticos. Posteriormente se utilizó para cualquier esquema que emplee números aleatorios, usando variables aleatorias con distribuciones de probabilidad conocidas [\[1\]](#bibliograf%C3%ADa). Este método es ideal para situaciones en las cuales algún valor o alguna distribución no se conoce y resulta complicado de determinar de manera analítica [\[2\]](#bibliograf%C3%ADa). El método se define como sigue
+La simulación de Monte-Carlo fue creada para integrales que no se pueden resolver por métodos analíticos. Posteriormente se utilizó para cualquier esquema que emplee números aleatorios, usando variables aleatorias con distribuciones de probabilidad conocidas [\[1,8\]](#bibliograf%C3%ADa). Este método es ideal para situaciones en las cuales algún valor o alguna distribución no se conoce y resulta complicado de determinar de manera analítica [\[2\]](#bibliograf%C3%ADa). El método se define como sigue
 
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?y=\frac{1}{M}\sum_{i=1}^{N}&space;g(x_i)," />
@@ -85,6 +85,7 @@ Finalmente, en la **figura 3** se despliegan los resultados del pronóstico esta
 5. R. Hyndman, M. O'Hara-Wild, C. Bergmeir, <i>et al.</i>. Package ‘forecast’, <i>R Package</i>, [\[url\]](https://cran.r-project.org/web/packages/forecast/forecast.pdf).
 6. Boletín Epidemiológico, Secretaría de Salud - Dirección General de Epidemiología, 2016, [\[url\]](https://www.gob.mx/salud/acciones-y-programas/boletinepidemiologico-sistema-nacional-de-vigilancia-epidemiologica-sistema-unico-de-informacion-90794).
 7. Enfermedad por el virus de Zika. OMS, 2016, [\[url\]](http://www.who.int/mediacentre/factsheets/zika/es/).
+8. O.M. Ponce. Simulación de Monte Carlo, <i>Simulación de Monte Carlo en Autómatas Celulares</i>, CINVESTAV, 2015, [\[url\]](http://delta.cs.cinvestav.mx/~mcintosh/oldweb/s1998/oscar/node3.html).
 
 [f1]: https://latex.codecogs.com/gif.latex?g
 [f2]: https://latex.codecogs.com/gif.latex?M
