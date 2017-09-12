@@ -73,7 +73,7 @@ Finalmente, en la **figura 3** se despliegan los resultados del pronóstico esta
 
 ## Conclusiones
 
-1. Para los experimentos del cálculo de aproximación de la integral y <img src="https://latex.codecogs.com/gif.latex?\pi"/> se confirma que el tamaño de la muestra tiene una relación con la calidad del resultado del estimador, además de obviar el hecho de un incremento en el tiempo de computo.
+1. Para los experimentos del cálculo de aproximación de la integral y <img src="https://latex.codecogs.com/gif.latex?\pi"/> se confirma que el tamaño de la muestra tiene una relación con la calidad del resultado del estimador, además de obviar el hecho de un incremento en el tiempo de cómputo.
 
 2. La baja calidad del pronóstico de ambos modelos confirman la incertidumbre existente en la serie de datos. La situación que se pretende estimar se conforma de otras tantas variables del entorno [\[7\]](#bibliograf%C3%ADa) (variables independientes) que afectan el número de casos en cada semana (variable dependiente), por lo cual tratar realizar un pronóstico a través de una metodología de serie de tiempo puede conllevar a resultados de pobre calidad. En este caso se recomienda realizar un levantamiento mayor de estas variables independientes (clima, humedad, región, altitud, estacionalidad, etc.) y modelar el problema como una **regresión multivariable**.
 
