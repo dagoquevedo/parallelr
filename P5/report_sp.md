@@ -14,7 +14,7 @@ El objetivo general de esta práctica es analizar el efecto que tiene el tamaño
 1. Examinar el efecto del tamaño de la muestra en la precisión del estimado de una integral y realizar una comparacion del resultado obtenido con el valor resuelto por Wolfram Alpha, así como el tiempo de ejecución. La integral propuesta para el análisis es la siguiente
  
 <p align = "center">
-<img src="https://latex.codecogs.com/gif.latex?f(x)=\int_{7}^{3}\frac{1}{\exp(x)&plus;\exp(-x)}dx\approx&space;0.048834."/>
+<img src="https://latex.codecogs.com/gif.latex?\int_{7}^{3}\frac{1}{\exp(x)&plus;\exp(-x)}dx\approx&space;0.048834."/>
 </p>
 
 2. Implementar la estimación del valor de <img src="https://latex.codecogs.com/gif.latex?\pi"/> propuesta por Kurt [\[3\]](#bibliograf%C3%ADa) con paralelismo y realizar una comparación del resultado obtenido con el valor resuelto por Wolfram Alph, que es aproximadamente
