@@ -78,7 +78,7 @@ Finalmente, en la **figura 3** se despliegan los resultados del pronóstico esta
 2. La baja calidad del pronóstico de ambos modelos confirman la incertidumbre existente en la serie de datos. La situación que se pretende estimar se conforma de otras tantas variables del entorno [\[7\]](#bibliograf%C3%ADa) (variables independientes) que afectan el número de casos en cada semana (variable dependiente), por lo cual tratar realizar un pronóstico a través de una metodología de serie de tiempo puede conllevar a resultados de pobre calidad. En este caso se recomienda realizar un levantamiento mayor de estas variables independientes (clima, humedad, región, altitud, estacionalidad, etc.) y modelar el problema como una **regresión multivariable**.
 
 #### Bibliografía
-1. P. E. Kloeden, E. Platen. <i>Numerical Solution of Stochastic Differential Equations</i>, Springer, Berlin, 1992.
+1. P.E. Kloeden, E. Platen. <i>Numerical Solution of Stochastic Differential Equations</i>, Springer, Berlin, 1992.
 2. S.E. Schaeffer. Práctica 4: Método de Monte-carlo, <i>R paralelo: simulación & análisis de datos</i>, [\[url\]](http://elisa.dyndns-web.com/teaching/comp/par/p5.html).
 3. W. Kurt. 6 Neat Tricks with Monte Carlo Simulations, <i>Count Bayesie</i>, [\[url\]](https://www.countbayesie.com/blog/2015/3/3/6-amazing-trick-with-monte-carlo-simulations).
 4. R. Calaway, S. Weston, D. Tenenbaum. Foreach Parallel Adaptor for the 'parallel' Package, <i>R Package</i>, [\[url\]](https://cran.r-project.org/web/packages/doParallel/doParallel.pdf).
