@@ -1,4 +1,4 @@
-# Sistemas multiagentes
+# Sistema multiagente
 
 ## Introducción
 
