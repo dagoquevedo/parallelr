@@ -196,3 +196,9 @@ ggplot(data = avg.tmax, aes(x = pi, y = pv)) +
 				scale_x_continuous(breaks = seq(min(avg.infecteds$pi), max(avg.infecteds$pi), by = 0.05)) +
 				scale_y_continuous(breaks = seq(min(avg.infecteds$pv), max(avg.infecteds$pv), by = 0.05))
 graphics.off()
+
+kruskal.test(pct ~ pi,   data = max.infecteds)
+kruskal.test(pct ~ pv,   data = max.infecteds)
+kruskal.test(t.max ~ pi, data = max.infecteds)
+kruskal.test(t.max ~ pv, data = max.infecteds)
+		
