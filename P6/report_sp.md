@@ -5,7 +5,7 @@
 Los **sistema multiagente** (MAS, por sus siglas en inglés de <i>multi-agent system</i>) [\[1,2\]](#bibliograf%C3%ADa) es un sistema compuesto de múltiples agentes con estados internos que interaccionan entre ellos, donde un **agente** se define como una entidad capaz de actuar de manera independiente, de percibir y reaccionar a las condiciones de un entorno, satisfaciendo los objetivos de diseño y sujeto a un conjunto de reglas [\[3\]](#bibliograf%C3%ADa). La **figura 1** (tomada de [\[1\]](#bibliograf%C3%ADa)) muestra el diagrama de un sistema multiagente reactivo con estado interno, en el cual se identifican **sensores** que percibe las condiciones del entorno y **actuadores** que retornan un acción hacia el entorno.
 
 <p align="center">
-<img src="https://github.com/dagoquevedo/parallelr/blob/master/P6/img/P6_5.png" width="50%" height="50%"/><br>
+<img src="https://github.com/dagoquevedo/parallelr/blob/master/P6/img/P6_6.png" width="50%" height="50%"/><br>
 <b>Figura 1.</b> Sistema multiagente reactivo con estado interno.
 </p>
 
@@ -127,7 +127,14 @@ La **figura 5** muestra un mapa de calor que expresa para cada combinación de p
 <b>Figura 5.</b> Efecto de las probabilidades de vacunación e infección inicial en el período donde ocurre el máximo porcentaje de agentes infectados.
 </p>
 
-Se observa como a medida que incrementa <img src="https://latex.codecogs.com/gif.latex?p_i"/> el máximo porcentaje de agentes infectados tiende a ocurrir en períodos más tempranos; por el contrario al decrementar <img src="https://latex.codecogs.com/gif.latex?p_i"/> el máximo porcentaje tiende a ocurrir en períodos más tardíos; por otro lado no se logra apreciar un efecto relevante de <img src="https://latex.codecogs.com/gif.latex?p_v"/> sobre este valor. El **cuadro 1** contiene el resultado de la prueba estadística de Kruskal-Wallis con un nivel de significancia de <img src="https://latex.codecogs.com/gif.latex?\alpha=5\%"/>.
+A primera vista no se logra apreciar un efecto relevante de <img src="https://latex.codecogs.com/gif.latex?p_v"/> el período donde ocurre el máximo porcentaje de infección; con la finalidad de tener una mayor claridad de este análisis se procede a gráfica sólo en función de <img src="https://latex.codecogs.com/gif.latex?p_i"/>.
+
+<p align="center">
+<img src="https://github.com/dagoquevedo/parallelr/blob/master/P6/img/P6_5.png" width="75%" height="75%"/><br>
+<b>Figura 6.</b> Efecto de la probabilidad de infección inicial en el período donde ocurre el máximo porcentaje de agentes infectados.
+</p>
+
+En la **figura 6** se observa como a medida que incrementa <img src="https://latex.codecogs.com/gif.latex?p_i"/> el máximo porcentaje de agentes infectados tiende a ocurrir en períodos más tempranos; por el contrario al decrementar <img src="https://latex.codecogs.com/gif.latex?p_i"/> el máximo porcentaje tiende a ocurrir en períodos más tardíos. El **cuadro 1** contiene el resultado de las pruebas estadísticas de Kruskal-Wallis con un nivel de significancia de <img src="https://latex.codecogs.com/gif.latex?\alpha=5\%"/>.
 
 <caption><b>Cuadro 1.</b> Resultados de la prueba de Kruskal-Wallis.</caption>
 
@@ -138,7 +145,7 @@ Se observa como a medida que incrementa <img src="https://latex.codecogs.com/gif
 |<img src="https://latex.codecogs.com/gif.latex?H_3"/>|<img src="https://latex.codecogs.com/gif.latex?2.2&space;\times&space;10^{-16}"/>|
 |<img src="https://latex.codecogs.com/gif.latex?H_4"/>|<img src="https://latex.codecogs.com/gif.latex?0.30435879"/>|
 
-Los resultados muestran que <img src="https://latex.codecogs.com/gif.latex?p_i"/> y <img src="https://latex.codecogs.com/gif.latex?p_v"/> tienen un efecto significativo en el porcentaje máximo de agentes infectados. En el caso del período donde ocurre el máximo porcentaje de agentes infectados, se confirma que sólo <img src="https://latex.codecogs.com/gif.latex?p_i"/> tiene un efecto significativo en este valor, y no así <img src="https://latex.codecogs.com/gif.latex?p_v"/>, cuyo <img src="https://latex.codecogs.com/gif.latex?p"/>-valor resulto ser mayor al nivel de significancia. Lo anterior es consistente con el análisis gráfico discutido en la **figura 4** y **figura 5**. 
+Los resultados muestran que <img src="https://latex.codecogs.com/gif.latex?p_i"/> y <img src="https://latex.codecogs.com/gif.latex?p_v"/> tienen un efecto significativo en el porcentaje máximo de agentes infectados. En el caso del período donde ocurre el máximo porcentaje de agentes infectados, se confirma que sólo <img src="https://latex.codecogs.com/gif.latex?p_i"/> tiene un efecto significativo en este valor, y no así <img src="https://latex.codecogs.com/gif.latex?p_v"/>, cuyo <img src="https://latex.codecogs.com/gif.latex?p"/>-valor resulto ser mayor al nivel de significancia. Lo anterior es consistente con el análisis gráfico discutido en la **figura 4** y **figura 5**.
 
 ## Conclusiones
 
