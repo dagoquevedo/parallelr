@@ -120,17 +120,18 @@ plot.2 = function(B) {
 			scale_color_manual("Estado",values=c("S"="chartreuse3", "I"="firebrick2","R"="goldenrod"))
 
 	print(g)
-	
+	graphics.off()
 }
 
         
 #### main ####
-max.infecteds = data.frame(r = double(), pi = double(), pv = double(), val = double(), pct = double())
+max.infecteds = data.frame(r = double(), pi = double(), pv = double(), val = double(), pct = double(), max.t = double())
 agents 		  = data.frame(x = double(), y = double(), dx = double(), dy = double(), state  = character())
 		
 registerDoParallel(makeCluster(detectCores() - 1))
 
 for (rep in 1:restarts) {
+	print(rep)
 	for(pi in seq(pi_min,pi_max,0.05)) {
 		for(pv in seq(pv_min,pv_max,0.05)) {
 			agents   = foreach(i = 1:n, .combine = rbind) %dopar% initialization(pi, pv)
@@ -158,14 +159,17 @@ for (rep in 1:restarts) {
 				unlink("img/P6_1*.png")
 			}
 
-			max.infecteds = rbind(max.infecteds, cbind(r = rep, pi = pi, pv = pv, val =  max(epidemic$I), pct = 100 * max(epidemic$I)/n))
+			max.infecteds = rbind(max.infecteds, cbind(r = rep, pi = pi, pv = pv, val =  max(epidemic$I), pct = 100 * max(epidemic$I)/n, t.max = which.max(epidemic$I)))
 		}
 	}
 }
 
+print(max.infecteds)
+		
 stopImplicitCluster()
 
 avg.infecteds = aggregate(pct ~ pi + pv, max.infecteds, mean)		
+avg.tmax 	  = aggregate(t.max ~ pi + pv, max.infecteds, mean)		
 
 png("img/P6_3.png", width = 7, height = 5, units = "in", res = 200)
 
@@ -173,10 +177,22 @@ ggplot(data = avg.infecteds, aes(x = pi, y = pv)) +
 	  geom_tile(aes(fill = pct)) + 
 	  scale_fill_gradientn(colours = rev(heat.colors(256)), name = "Porcentaje") + 
 	  xlab(bquote("Probabilidad de infección inicial " ~ (p[i])))+ylab(bquote("Probabilidad de vacunación " ~ (p[v]))) +
-				labs(title = "Efecto de la vacunación e infección inicial en la propagación", 
+				labs(title = "Efecto en el máximo porcentaje de infección", 
 					 subtitle = sprintf("Agentes: %d | Períodos: %d", n, tmax)) +
 				theme(plot.title = element_text(hjust = 0.5), plot.subtitle = element_text(hjust = 0.5)) + 
 				scale_x_continuous(breaks = seq(min(avg.infecteds$pi), max(avg.infecteds$pi), by = 0.05)) +
 				scale_y_continuous(breaks = seq(min(avg.infecteds$pv), max(avg.infecteds$pv), by = 0.05))
-
+graphics.off()
 		
+png("img/P6_4.png", width = 7, height = 5, units = "in", res = 200)
+
+ggplot(data = avg.tmax, aes(x = pi, y = pv)) +
+	  geom_tile(aes(fill = t.max)) + 
+	  guides(fill=guide_legend(title="Períodos")) + 
+	  xlab(bquote("Probabilidad de infección inicial " ~ (p[i])))+ylab(bquote("Probabilidad de vacunación " ~ (p[v]))) +
+				labs(title = "Efecto en el período con máximo porcentaje de infección", 
+					 subtitle = sprintf("Agentes: %d | Períodos: %d", n, tmax)) +
+				theme(plot.title = element_text(hjust = 0.5), plot.subtitle = element_text(hjust = 0.5)) + 
+				scale_x_continuous(breaks = seq(min(avg.infecteds$pi), max(avg.infecteds$pi), by = 0.05)) +
+				scale_y_continuous(breaks = seq(min(avg.infecteds$pv), max(avg.infecteds$pv), by = 0.05))
+graphics.off()
