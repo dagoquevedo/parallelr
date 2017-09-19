@@ -164,7 +164,7 @@ for (rep in 1:restarts) {
 	}
 }
 
-print(max.infecteds)
+write.csv(max.infecteds,file="data.txt")
 		
 stopImplicitCluster()
 
@@ -177,7 +177,7 @@ ggplot(data = avg.infecteds, aes(x = pi, y = pv)) +
 	  geom_tile(aes(fill = pct)) + 
 	  scale_fill_gradientn(colours = rev(heat.colors(256)), name = "Porcentaje") + 
 	  xlab(bquote("Probabilidad de infección inicial " ~ (p[i])))+ylab(bquote("Probabilidad de vacunación " ~ (p[v]))) +
-				labs(title = "Efecto en el máximo porcentaje de infección", 
+				labs(title = "Efecto en el máximo porcentaje de agentes infectados", 
 					 subtitle = sprintf("Agentes: %d | Períodos: %d", n, tmax)) +
 				theme(plot.title = element_text(hjust = 0.5), plot.subtitle = element_text(hjust = 0.5)) + 
 				scale_x_continuous(breaks = seq(min(avg.infecteds$pi), max(avg.infecteds$pi), by = 0.05)) +
@@ -190,7 +190,7 @@ ggplot(data = avg.tmax, aes(x = pi, y = pv)) +
 	  geom_tile(aes(fill = t.max)) + 
 	  guides(fill=guide_legend(title="Períodos")) + 
 	  xlab(bquote("Probabilidad de infección inicial " ~ (p[i])))+ylab(bquote("Probabilidad de vacunación " ~ (p[v]))) +
-				labs(title = "Efecto en el período con máximo porcentaje de infección", 
+				labs(title = "Efecto en el período con máximo porcentaje de agentes infectados", 
 					 subtitle = sprintf("Agentes: %d | Períodos: %d", n, tmax)) +
 				theme(plot.title = element_text(hjust = 0.5), plot.subtitle = element_text(hjust = 0.5)) + 
 				scale_x_continuous(breaks = seq(min(avg.infecteds$pi), max(avg.infecteds$pi), by = 0.05)) +
