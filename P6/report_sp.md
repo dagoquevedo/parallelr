@@ -1,4 +1,4 @@
-# Sistema multiagente
+# Sistema multiagente 
 
 ## Introducción
 
@@ -19,12 +19,12 @@ donde <img src="https://latex.codecogs.com/gif.latex?r"> es un umbral. Los agent
 
 ## Objetivo
 
-1. Identificar funcionalidades dentro del código base [\[4\]](#bibliograf%C3%ADa) que puedan ser paralelizadas e implementar una versión con alguno de los paquetes conocidos de paralelización.
+1. Identificar las funcionalidades dentro del código base [\[4\]](#bibliograf%C3%ADa) que puedan ser paralelizadas e implementar una versión con alguno de los paquetes conocidos de paralelización.
 2. Vacunar con probabilidad <img src="https://latex.codecogs.com/gif.latex?p_v"> a los agentes al momento de su creación de tal forma que se encuentren desde el inicio en el estado **R**, por lo que no podrán contagiarse ni propagar la infección.
 3. Estudiar el efecto de las probabilidades <img src="https://latex.codecogs.com/gif.latex?p_i"> y <img src="https://latex.codecogs.com/gif.latex?p_v"> en el porcentaje máximo de infectados durante la simulación, así como el período donde ocurre este valor máximo.
 
 ## Adaptaciones en el código
-Uno de los objetivos consisten en paralelizar funcionalidades contenidas en el código base. La primera funcionalidad que se ha paralelizado es la inicialización de los agentes. Este proceso puede paralelizarse debido a que no es requerida una precedencia de operaciones entre los agentes durante su creación. En esta adaptación se ha incluido la probabilidad de vacunación <img src="https://latex.codecogs.com/gif.latex?p_v">. La rutina propuesta se ha contenido en la función `initialization`, definida a continuación:
+Uno de los objetivos consisten en paralelizar funcionalidades contenidas en el código base [\[4\]](#bibliograf%C3%ADa). La primera funcionalidad que se ha paralelizado es la inicialización de los agentes. Este proceso puede paralelizarse debido a que no es requerida una precedencia de operaciones entre los agentes durante su creación. En esta adaptación se ha incluido la probabilidad de vacunación <img src="https://latex.codecogs.com/gif.latex?p_v">. La rutina propuesta se ha contenido en la función `initialization`, definida a continuación:
 
 ```
 initialization = function(pi, pv) {
@@ -93,7 +93,7 @@ El objetivo del experimento es estudiar el efecto de las probabilidades <img src
 <b>Figura 2.</b> Simulación de la propagación de la infección con <img src="https://latex.codecogs.com/gif.latex?t_{\max}=100"/> y <img src="https://latex.codecogs.com/gif.latex?n=50"/>.
 </p>
 
-La **figura 3** muestra una comparación por período del porcentaje de agentes en cada uno de los estados. Se aprecia como la infección tiene un efecto semejante a una campana, es decir después de alcanzarse el máximo porcentaje de agentes infectados, sigue una disminución de la infección, a la vez que el número de agentes recuperados e inmunizados aumenta; este efecto en la simulación es ocasionado por la probabilidad de recuperación <img src="https://latex.codecogs.com/gif.latex?p_r"/>.
+La **figura 3** muestra una comparación por período del porcentaje de agentes en cada uno de los estados. Se aprecia como la infección tiene un efecto semejante a una campana, es decir después de alcanzarse el máximo porcentaje de agentes infectados, sigue una disminución de la infección, a la vez que el número de agentes recuperados e inmunizados aumenta,  efecto ocasionado por la probabilidad de recuperación <img src="https://latex.codecogs.com/gif.latex?p_r"/>.
 
 <p align="center">
 <img src="https://github.com/dagoquevedo/parallelr/blob/master/P6/img/P6_2.png" width="75%" height="75%"/><br>
@@ -108,7 +108,7 @@ Para el experimento en exhaustivo, se definen los siguientes valores para cada p
 * <img src="https://latex.codecogs.com/gif.latex?H_4"/>: <img src="https://latex.codecogs.com/gif.latex?p_v"/> tiene un efecto significativo en el período donde ocurre el máximo porcentaje de agentes infectados.
 
 ### Condiciones computacionales
-Se hace uso de una instancia SO Linux (Ubuntu 16.04) 64-bits, con procesador Intel (R) Core (TM) i7-5600U CPU @ 2.60 GHz y 12 GB de memoria RAM con 2 núcleos y 4 procesadores lógicos, durante la experimentación el <i>cluster</i> hizo uso de 3 núcleos. La aplicación se ha codificado en R, haciendo uso del paquete `doParallel` [\[7\]](#bibliograf%C3%ADa) que incluye la función `foreach`.
+Se hace uso de una instancia SO Linux (Ubuntu 16.04) 64-bits, con procesador Intel (R) Core (TM) i7-5600U CPU @ 2.60 GHz y 12 GB de memoria RAM con 2 núcleos y 4 procesadores lógicos. Durante la experimentación el <i>cluster</i> hizo uso de 3 núcleos. La aplicación se ha codificado en R, haciendo uso del paquete `doParallel` [\[7\]](#bibliograf%C3%ADa) que incluye la función `foreach`.
 
 ## Resultados
 La **figura 4** muestra un mapa de calor que expresa para cada combinación de probabilidades <img src="https://latex.codecogs.com/gif.latex?(p_i,p_v)"/> la media de los máximos porcentajes de agentes infectados.
@@ -127,24 +127,24 @@ La **figura 5** muestra un mapa de calor que expresa para cada combinación de p
 <b>Figura 5.</b> Efecto de las probabilidades de vacunación e infección inicial en el período donde ocurre el máximo porcentaje de agentes infectados.
 </p>
 
-Se observa como a medida que incrementa <img src="https://latex.codecogs.com/gif.latex?p_i"/> el máximo porcentaje de agentes infectados tiende a ocurrir en períodos más tempranos; por el contrario al decrementar <img src="https://latex.codecogs.com/gif.latex?p_i"/> el máximo porcentaje tiende a ocurrir en períodos más tardíos; no se observa un efecto significativo de <img src="https://latex.codecogs.com/gif.latex?p_v"/> en este valor. El **cuadro 1** contiene el resultado de la prueba estadística de Kruskal-Wallis con un nivel de significancia de <img src="https://latex.codecogs.com/gif.latex?\alpha=5\%"/>.
+Se observa como a medida que incrementa <img src="https://latex.codecogs.com/gif.latex?p_i"/> el máximo porcentaje de agentes infectados tiende a ocurrir en períodos más tempranos; por el contrario al decrementar <img src="https://latex.codecogs.com/gif.latex?p_i"/> el máximo porcentaje tiende a ocurrir en períodos más tardíos; por otro lado no se logra apreciar un efecto relevante de <img src="https://latex.codecogs.com/gif.latex?p_v"/> sobre este valor. El **cuadro 1** contiene el resultado de la prueba estadística de Kruskal-Wallis con un nivel de significancia de <img src="https://latex.codecogs.com/gif.latex?\alpha=5\%"/>.
 
 <caption><b>Cuadro 1.</b> Resultados de la prueba de Kruskal-Wallis.</caption>
 
 | Hipótesis | <img src="https://latex.codecogs.com/gif.latex?p"/>-valor |
 |:---------:|:--------:|
-|<img src="https://latex.codecogs.com/gif.latex?H_1"/>|<img src="https://latex.codecogs.com/gif.latex?1.6&space;\times&space;10^{-13}"/>|
+|<img src="https://latex.codecogs.com/gif.latex?H_1"/>|<img src="https://latex.codecogs.com/gif.latex?2.2&space;\times&space;10^{-16}"/>|
 |<img src="https://latex.codecogs.com/gif.latex?H_2"/>|<img src="https://latex.codecogs.com/gif.latex?2.2&space;\times&space;10^{-16}"/>|
 |<img src="https://latex.codecogs.com/gif.latex?H_3"/>|<img src="https://latex.codecogs.com/gif.latex?2.2&space;\times&space;10^{-16}"/>|
-|<img src="https://latex.codecogs.com/gif.latex?H_4"/>|<img src="https://latex.codecogs.com/gif.latex?0.58794538"/>|
+|<img src="https://latex.codecogs.com/gif.latex?H_4"/>|<img src="https://latex.codecogs.com/gif.latex?0.30435879"/>|
 
 Los resultados muestran que <img src="https://latex.codecogs.com/gif.latex?p_i"/> y <img src="https://latex.codecogs.com/gif.latex?p_v"/> tienen un efecto significativo en el porcentaje máximo de agentes infectados. En el caso del período donde ocurre el máximo porcentaje de agentes infectados, se confirma que sólo <img src="https://latex.codecogs.com/gif.latex?p_i"/> tiene un efecto significativo en este valor, y no así <img src="https://latex.codecogs.com/gif.latex?p_v"/>, cuyo <img src="https://latex.codecogs.com/gif.latex?p"/>-valor resulto ser mayor al nivel de significancia. Lo anterior es consistente con el análisis gráfico discutido en la **figura 4** y **figura 5**. 
 
 ## Conclusiones
 
-A partir de la evidencia empírica y estadística mostrada en la sección de [Resultados](#resultados), se puede concluir lo siguiente:
+A partir de la evidencia empírica y estadística discutida en la sección de [Resultados](#resultados), se puede concluir lo siguiente:
 
-* <img src="https://latex.codecogs.com/gif.latex?p_i"/> y <img src="https://latex.codecogs.com/gif.latex?p_v"/> tienen un efecto significativo sobre la propagación de una infección. Cuando se incrementa <img src="https://latex.codecogs.com/gif.latex?p_v"/> y decrementar <img src="https://latex.codecogs.com/gif.latex?p_i"/> el máximo porcentaje de agentes infectados **decrece**, demostrando la efectividad de la inmunización como medida preventiva. Por el contrario si se incrementa <img src="https://latex.codecogs.com/gif.latex?p_i"/> y decrementa <img src="https://latex.codecogs.com/gif.latex?p_v"/> el valor se **incrementa**.
+* <img src="https://latex.codecogs.com/gif.latex?p_i"/> y <img src="https://latex.codecogs.com/gif.latex?p_v"/> tienen un efecto significativo sobre la propagación de una infección. Cuando se incrementa <img src="https://latex.codecogs.com/gif.latex?p_v"/> y decrementar <img src="https://latex.codecogs.com/gif.latex?p_i"/> el máximo porcentaje de agentes infectados **decrece**.  Por el contrario si se incrementa <img src="https://latex.codecogs.com/gif.latex?p_i"/> y decrementa <img src="https://latex.codecogs.com/gif.latex?p_v"/> el valor se **incrementa**. Lo anterior demuestra la efectividad de la inmunización como medida preventiva ante la amenaza de una infección.
 
 * <img src="https://latex.codecogs.com/gif.latex?p_i"/> tiene un efecto significativo sobre el período donde ocurre la máxima propagación de la infección. Esto es, si se incrementa <img src="https://latex.codecogs.com/gif.latex?p_i"/> la máxima propagación de la infección ocurre en períodos más tempranos; por el contrario al decrementar <img src="https://latex.codecogs.com/gif.latex?p_i"/> este máximo ocurre en períodos más tardíos. Esto tiene perfecto sentido debido a que a un mayor número de agentes infectados en la etapa inicial, la infección hacia agentes susceptibles ocurre de manera más ágil.
 
