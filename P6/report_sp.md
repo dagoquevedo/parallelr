@@ -155,4 +155,4 @@ A partir de la evidencia empírica y estadística mostrada en la sección de [Re
 5. W.O. Kermack, A.G. McKendrick. A Contribution to the Mathematical Theory of Epidemics. <i>Proceedings of the Royal Society A</i>. 115(772): 700–721, Agosto, 1927, [\[doi\]](http://doi.org/10.1098/rspa.1927.0118).
 6. H.W. Hethcote, Three Basic Epidemiological Models. En <i>Applied Mathematical Ecology</i>, Springer, 1989, [\[doi\]](http://doi.org/10.1007/978-3-642-61317-3_5). 
 7. R. Calaway, S. Weston, D. Tenenbaum. Foreach Parallel Adaptor for the 'parallel' Package. <i>R Package</i>, [\[url\]](https://cran.r-project.org/web/packages/doParallel/doParallel.pdf).
-8. W.H. Kruskal y W.A. Wallis. Use of ranks in one-criterion variance analysis. <i>Journal of the American Statistical Association</i>, 47(260): 583-621, 1952.
+8. W.H. Kruskal y W.A. Wallis. Use of ranks in one-criterion variance analysis. <i>Journal of the American Statistical Association</i>, 47(260): 583-621, 1952, [\[doi\]](http://doi.org/10.2307/2280779). 
