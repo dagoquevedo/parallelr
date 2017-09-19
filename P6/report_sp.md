@@ -127,7 +127,7 @@ La **figura 5** muestra un mapa de calor que expresa para cada combinación de p
 <b>Figura 5.</b> Efecto de las probabilidades de vacunación e infección inicial en el período donde ocurre el máximo porcentaje de agentes infectados.
 </p>
 
-A primera vista no se logra apreciar un efecto relevante de <img src="https://latex.codecogs.com/gif.latex?p_v"/> el período donde ocurre el máximo porcentaje de infección; con la finalidad de tener una mayor claridad de este análisis se procede a gráfica sólo en función de <img src="https://latex.codecogs.com/gif.latex?p_i"/>.
+A primera vista no se logra apreciar un efecto relevante de <img src="https://latex.codecogs.com/gif.latex?p_v"/> en el período donde ocurre el máximo porcentaje de infección. Con la finalidad de tener una mayor claridad de este análisis se procede a gráfica sólo en función de <img src="https://latex.codecogs.com/gif.latex?p_i"/>.
 
 <p align="center">
 <img src="https://github.com/dagoquevedo/parallelr/blob/master/P6/img/P6_5.png" width="75%" height="75%"/><br>
