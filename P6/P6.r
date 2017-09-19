@@ -197,8 +197,17 @@ ggplot(data = avg.tmax, aes(x = pi, y = pv)) +
 				scale_y_continuous(breaks = seq(min(avg.infecteds$pv), max(avg.infecteds$pv), by = 0.05))
 graphics.off()
 
+png("img/P6_5.png", width = 7, height = 5, units = "in", res = 200)
+
+ggplot(max.infecteds, aes(as.factor(pi), t.max)) + geom_boxplot() + theme_bw() + 
+labs(title = "Efecto en el período con máximo porcentaje de agentes infectados", 
+			  subtitle = sprintf("Agentes: %d | Períodos: %d", n, tmax)) +
+			  theme(plot.title = element_text(hjust = 0.5), plot.subtitle = element_text(hjust = 0.5)) + 
+			  xlab(bquote("Probabilidad de infección inicial " ~ (p[i]))) + ylab("Período")
+graphics.off()
+
+			
 kruskal.test(pct ~ pi,   data = max.infecteds)
 kruskal.test(pct ~ pv,   data = max.infecteds)
 kruskal.test(t.max ~ pi, data = max.infecteds)
 kruskal.test(t.max ~ pv, data = max.infecteds)
-		
