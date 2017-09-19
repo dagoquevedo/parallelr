@@ -145,7 +145,7 @@ En la **figura 6** se observa como a medida que incrementa <img src="https://lat
 |<img src="https://latex.codecogs.com/gif.latex?H_3"/>|<img src="https://latex.codecogs.com/gif.latex?2.2&space;\times&space;10^{-16}"/>|
 |<img src="https://latex.codecogs.com/gif.latex?H_4"/>|<img src="https://latex.codecogs.com/gif.latex?0.30435879"/>|
 
-Los resultados muestran que <img src="https://latex.codecogs.com/gif.latex?p_i"/> y <img src="https://latex.codecogs.com/gif.latex?p_v"/> tienen un efecto significativo en el porcentaje máximo de agentes infectados. En el caso del período donde ocurre el máximo porcentaje de agentes infectados, se confirma que sólo <img src="https://latex.codecogs.com/gif.latex?p_i"/> tiene un efecto significativo en este valor, y no así <img src="https://latex.codecogs.com/gif.latex?p_v"/>, cuyo <img src="https://latex.codecogs.com/gif.latex?p"/>-valor resulto ser mayor al nivel de significancia. Lo anterior es consistente con el análisis gráfico discutido en la **figura 4** y **figura 5**.
+Los resultados muestran que <img src="https://latex.codecogs.com/gif.latex?p_i"/> y <img src="https://latex.codecogs.com/gif.latex?p_v"/> tienen un efecto significativo en el porcentaje máximo de agentes infectados. En el caso del período donde ocurre el máximo porcentaje de agentes infectados, se confirma que sólo <img src="https://latex.codecogs.com/gif.latex?p_i"/> tiene un efecto significativo en este valor, y no así <img src="https://latex.codecogs.com/gif.latex?p_v"/>, cuyo <img src="https://latex.codecogs.com/gif.latex?p"/>-valor resulto ser mayor al nivel de significancia. Lo anterior es consistente con el análisis gráfico discutido en la **figura 4**,  **figura 5** y **figura 6**.
 
 ## Conclusiones
 
