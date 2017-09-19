@@ -1,3 +1,5 @@
+# Sistemas multiagentes
+
 ## Introducción
 
 Los **sistema multiagente** (MAS, por sus siglas en inglés de <i>multi-agent system</i>) [\[1,2\]](#bibliograf%C3%ADa) es un sistema compuesto de múltiples agentes con estados internos que interaccionan entre ellos, donde un **agente** se define como una entidad capaz de actuar de manera independiente, de percibir y reaccionar a las condiciones de un entorno, satisfaciendo los objetivos de diseño y sujeto a un conjunto de reglas [\[3\]](#bibliograf%C3%ADa). La **figura 1** (tomada de [\[1\]](#bibliograf%C3%ADa)) muestra el diagrama de un sistema multiagente reactivo con estado interno, en el cual se identifican **sensores** que percibe las condiciones del entorno y **actuadores** que retornan un acción hacia el entorno.
