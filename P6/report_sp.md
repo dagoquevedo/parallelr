@@ -125,7 +125,7 @@ La **figura 5** muestra un mapa de calor que expresa para cada combinación de p
 <b>Figura 5.</b> Efecto de las probabilidades de vacunación e infección inicial en el período donde ocurre el máximo porcentaje de agentes infectados.
 </p>
 
-Se observa como a medida que incrementa <img src="https://latex.codecogs.com/gif.latex?p_i"/> el máximo porcentaje de agentes infectados tiende a ocurrir en períodos más tempranos; por el contrario al decrementar <img src="https://latex.codecogs.com/gif.latex?p_i"/> el máximo porcentaje tiende a ocurrir en períodos más tardíos. El **cuadro 1** contiene el resultado de la prueba estadística de Kruskal-Wallis con un nivel de significancia de <img src="https://latex.codecogs.com/gif.latex?\alpha=5\%"/>.
+Se observa como a medida que incrementa <img src="https://latex.codecogs.com/gif.latex?p_i"/> el máximo porcentaje de agentes infectados tiende a ocurrir en períodos más tempranos; por el contrario al decrementar <img src="https://latex.codecogs.com/gif.latex?p_i"/> el máximo porcentaje tiende a ocurrir en períodos más tardíos; no se observa un efecto significativo de <img src="https://latex.codecogs.com/gif.latex?p_v"/> en este valor. El **cuadro 1** contiene el resultado de la prueba estadística de Kruskal-Wallis con un nivel de significancia de <img src="https://latex.codecogs.com/gif.latex?\alpha=5\%"/>.
 
 <caption><b>Cuadro 1.</b> Resultados de la prueba de Kruskal-Wallis.</caption>
 
@@ -155,4 +155,4 @@ A partir de la evidencia empírica y estadística mostrada en la sección de [Re
 5. W.O. Kermack, A.G. McKendrick. A Contribution to the Mathematical Theory of Epidemics. <i>Proceedings of the Royal Society A</i>. 115(772): 700–721, Agosto, 1927, [\[doi\]](http://doi.org/10.1098/rspa.1927.0118).
 6. H.W. Hethcote, Three Basic Epidemiological Models. En <i>Applied Mathematical Ecology</i>, Springer, 1989, [\[doi\]](http://doi.org/10.1007/978-3-642-61317-3_5). 
 7. R. Calaway, S. Weston, D. Tenenbaum. Foreach Parallel Adaptor for the 'parallel' Package. <i>R Package</i>, [\[url\]](https://cran.r-project.org/web/packages/doParallel/doParallel.pdf).
-8. W.H. Kruskal y W.A. Wallis. Use of ranks in one-criterion variance analysis. <i>Journal of the American Statistical Association</i>, 47(260): 583-621, 1952, [\[doi\]](http://doi.org/10.2307/2280779). 
+8. W.H. Kruskal y W.A. Wallis. Use of ranks in one-criterion variance analysis. <i>Journal of the American Statistical Association</i>, 47(260): 583-621, 1952, [\[doi\]](http://doi.org/10.2307/2280779).
