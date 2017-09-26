@@ -1,6 +1,4 @@
-<!--
-#Búsqueda Local
--->
+# Búsqueda Local
 
 ## Introducción
 
@@ -14,7 +12,11 @@ La **búsqueda local** es un método de optimización heurística que retorna un
 <a href="https://www.codecogs.com/eqnedit.php?latex=g(\boldsymbol{x})&space;=&space;\left&space;(\sum_{2}^{i=1}(x_i&space;&plus;&space;0.5)^4-30x^2_i-20x_i&space;\right&space;)&space;/&space;100" target="_blank"><img src="https://latex.codecogs.com/gif.latex?g(\boldsymbol{x})&space;=&space;\left&space;(\sum_{2}^{i=1}(x_i&space;&plus;&space;0.5)^4-30x^2_i-20x_i&space;\right&space;)&space;/&space;100." title="g(\boldsymbol{x}) = \left (\sum_{2}^{i=1}(x_i + 0.5)^4-30x^2_i-20x_i \right ) / 100" /></a>
 </p>
 
-2. Implementar el algoritmo de búsqueda local de **recocido simulado** para máximizar la función <img src="https://latex.codecogs.com/gif.latex?g(\boldsymbol{x})"/> y realizar un diseño experimental para examinar los efectos del valor inicial de la temperatura <img src="https://latex.codecogs.com/gif.latex?T"> y el valor de reducción de la temperatura <img src="https://latex.codecogs.com/gif.latex?\xi"> en la calidad de la solución.
+2. Implementar el algoritmo de búsqueda local de **recocido simulado** para máximizar la función <img src="https://latex.codecogs.com/gif.latex?g(\boldsymbol{x})"/> y realizar un diseño experimental para examinar los efectos del valor inicial de la temperatura <img src="https://latex.codecogs.com/gif.latex?T"> y el valor de reducción de la temperatura <img src="https://latex.codecogs.com/gif.latex?\xi"> en la calidad de la solución. En este método, si <img src="https://latex.codecogs.com/gif.latex?g(\boldsymbol{x}')>g(\boldsymbol{x})"/> entonces la probabilidad de selección es <img src="https://latex.codecogs.com/gif.latex?P(\boldsymbol{x},\boldsymbol{x}',T)=1"/>, en caso contrario:
+
+<p align="center">
+<img src="https://latex.codecogs.com/gif.latex?P(\boldsymbol{x}',\boldsymbol{x},T)=\exp(-(g(\boldsymbol{x})-g(\boldsymbol{x}'))/T)."/>  
+</p>
 
 ## Implementación y diseño experimental
 
@@ -51,7 +53,7 @@ La **figura 3** refleja una ejecución del método de **recocido simulado** para
 <b>Figura 3.</b> Iteraciones del recocido simulado para aproximar al máximo de la función <img src="https://latex.codecogs.com/gif.latex?g(\boldsymbol{x})">.
 </p>
 
-La **figura 4** muestra el resultado del experimento de los efectos resultantes de la variación de los parámetros <img src="https://latex.codecogs.com/gif.latex?T"> y <img src="https://latex.codecogs.com/gif.latex?\xi">, los valores estan dados por el promedio entre replicas para cada combinación posible de parametros <img src="https://latex.codecogs.com/gif.latex?T"> y <img src="https://latex.codecogs.com/gif.latex?(T,\xi)">. Aquí, vemos como <img src="https://latex.codecogs.com/gif.latex?T"> tiene un efecto positivo en la disminución del gap, por otro lado al decrementar el valor de <img src="https://latex.codecogs.com/gif.latex?xi">, el enfriamiento de <img src="https://latex.codecogs.com/gif.latex?T"> se realiza más agresivamente, por lo cual no da una flexibilidad mayor a seleccionar soluciones basado en una probabilidad <img src="https://latex.codecogs.com/gif.latex?\exp(-\delta/T)">, donde <img src="https://latex.codecogs.com/gif.latex?\delta"> es la diferencia respecto la solución concurrente en cada iteración.
+La **figura 4** muestra el resultado del experimento de los efectos resultantes de la variación de los parámetros <img src="https://latex.codecogs.com/gif.latex?T"> y <img src="https://latex.codecogs.com/gif.latex?\xi">, los valores estan dados por el promedio entre replicas para cada combinación posible de parametros <img src="https://latex.codecogs.com/gif.latex?T"> y <img src="https://latex.codecogs.com/gif.latex?(T,\xi)">. Aquí, vemos como <img src="https://latex.codecogs.com/gif.latex?T"> tiene un efecto positivo en la disminución del gap, por otro lado al decrementar el valor de <img src="https://latex.codecogs.com/gif.latex?xi">, el enfriamiento de <img src="https://latex.codecogs.com/gif.latex?T"> se realiza más agresivamente, por lo cual no da una mayor holgura a seleccionar soluciones basado en una probabilidad <img src="https://latex.codecogs.com/gif.latex?\exp(-\delta/T)">, donde <img src="https://latex.codecogs.com/gif.latex?\delta"> es la diferencia respecto la solución concurrente en cada iteración.
  
 <p align="center">
 <img src="https://github.com/dagoquevedo/parallelr/blob/master/P7/img/P7_B_3.png" width="95%" height="95%"/><br>
