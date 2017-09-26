@@ -1,4 +1,6 @@
-# Búsqueda Local
+<!--
+#Búsqueda Local
+-->
 
 ## Introducción
 
@@ -42,11 +44,15 @@ La **figura 2** refleja una ejecución de la **búsqueda local** para máximizar
 <b>Figura 2.</b> Iteraciones de la búsqueda local para aproximar al máximo de la función <img src="https://latex.codecogs.com/gif.latex?g(\boldsymbol{x})">.
 </p>
 
+La **figura 3** refleja una ejecución del método de **recocido simulado** para máximizar la función <img src="https://latex.codecogs.com/gif.latex?\inline&g(\boldsymbol{x})"> y expresada de forma plana, igual que la búsqueda local se observa cómo al incrementar <img src="https://latex.codecogs.com/gif.latex?t_{\max}">, las soluciones obtenidas tienden a concentrarse en los puntos extremos, reduciendo el valor de gap %.
+
 <p align="center">
 <img src="https://github.com/dagoquevedo/parallelr/blob/master/P7/img/P7_B_1.gif" width="60%" height="60%"/><br>
 <b>Figura 3.</b> Iteraciones del recocido simulado para aproximar al máximo de la función <img src="https://latex.codecogs.com/gif.latex?g(\boldsymbol{x})">.
 </p>
 
+La **figura 4** muestra el resultado del experimento de los efectos resultantes de la variación de los parámetros <img src="https://latex.codecogs.com/gif.latex?T"> y <img src="https://latex.codecogs.com/gif.latex?\xi">, los valores estan dados por el promedio entre replicas para cada combinación posible de parametros <img src="https://latex.codecogs.com/gif.latex?T"> y <img src="https://latex.codecogs.com/gif.latex?(T,\xi)">. Aquí, vemos como <img src="https://latex.codecogs.com/gif.latex?T"> tiene un efecto positivo en la disminución del gap, por otro lado al decrementar el valor de <img src="https://latex.codecogs.com/gif.latex?xi">, el enfriamiento de <img src="https://latex.codecogs.com/gif.latex?T"> se realiza más agresivamente, por lo cual no da una flexibilidad mayor a seleccionar soluciones basado en una probabilidad <img src="https://latex.codecogs.com/gif.latex?\exp(-\delta/T)">, donde <img src="https://latex.codecogs.com/gif.latex?\delta"> es la diferencia respecto la solución concurrente en cada iteración.
+ 
 <p align="center">
 <img src="https://github.com/dagoquevedo/parallelr/blob/master/P7/img/P7_B_3.png" width="95%" height="95%"/><br>
 <b>Figura 4.</b> Efectos de los parámetros <img src="https://latex.codecogs.com/gif.latex?T"> y <img src="https://latex.codecogs.com/gif.latex?\xi"> en el rendimiento del algoritmo de recocido simulado.
