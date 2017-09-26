@@ -1,3 +1,5 @@
+# Búsqueda Local
+
 ## Introducción
 
 La **búsqueda local** es un método de optimización heurística que retorna un óptimo local, el cual inicia desde una solución inicial <img src="https://latex.codecogs.com/gif.latex?x" />, y durante cada iteración aplica una transformación a la solución concurrente <img src="https://latex.codecogs.com/gif.latex?x" /> generando un vecindario <img src="https://latex.codecogs.com/gif.latex?N(x)" />, el mejor elemento evaluado se denota como <img src="https://latex.codecogs.com/gif.latex?x'" />, si <img src="https://latex.codecogs.com/gif.latex?f(x')" /> mejora a <img src="https://latex.codecogs.com/gif.latex?f(x)" />, entonces <img src="https://latex.codecogs.com/gif.latex?x=x'" />. El método se detiene cual el número máximo de iteraciones es alcanzado. En esta práctica se implementarán métodos de de optimización heurística sencilla para encontrar máximos locales de funciones, tomando los ejemplos propuestos por Womersley [\[1\]](#bibliograf%C3%ADa).
@@ -16,24 +18,24 @@ La **búsqueda local** es un método de optimización heurística que retorna un
 
 1. El movimiento que se ha implementado para la búsqueda local de la maximización de <img src="https://latex.codecogs.com/gif.latex?g(\boldsymbol{x})"/>, consiste en realizar dos movimientos aleatorios <img src="https://latex.codecogs.com/gif.latex?\inline&space;\Delta&space;x"/> y <img src="https://latex.codecogs.com/gif.latex?\inline&space;\Delta&space;y"> cuyas combinaciones posibles generan cuatro movimientos para las coordenadas <img src="https://latex.codecogs.com/gif.latex?x"/> y <img src="https://latex.codecogs.com/gif.latex?y"/>.
 
-2. Para el diseño experimental del algoritmo de búsqueda de **recocido simulado**, se establece ejecutarlo con distintos valores para el máximo de iteraciones, es decir <img src="https://latex.codecogs.com/gif.latex?\inline&space;t_{\max}\in\left&space;\{&space;10,10^2,10^3,10^4&space;\right&space;\}"/> y <img src="https://latex.codecogs.com/gif.latex?\inline&space;\xi\in\left&space;\{&space;0.545,0.995&space;\right&space;\}"/> con una discretización de <img src="https://latex.codecogs.com/gif.latex?\inline&space;0.15"/>. Establecemos que <img src="https://latex.codecogs.com/gif.latex?T=t_{\max}"/>. Se realizan 50 replicas para cada combinación de los parámetros definidos. Tomando como referencia el valor máximo posible, es decir <img src="https://latex.codecogs.com/gif.latex?g_{\max}=1.301250"/> y valor <img src="https://latex.codecogs.com/gif.latex?g"/> estimado por el método, se calcula la desviación relativa (gap %) de la manera siguiente:
+2. Para el diseño experimental del algoritmo de búsqueda de **recocido simulado**, se establece ejecutarlo con distintos valores para el máximo de iteraciones, es decir <img src="https://latex.codecogs.com/gif.latex?\inline&space;t_{\max}\in\left&space;\{&space;10,10^2,10^3,10^4&space;\right&space;\}"/> y <img src="https://latex.codecogs.com/gif.latex?\inline&space;\xi\in\left&space;\{&space;0.545,0.995&space;\right&space;\}"/> con una discretización de <img src="https://latex.codecogs.com/gif.latex?\inline&space;0.15"/>. Establecemos que <img src="https://latex.codecogs.com/gif.latex?T=t_{\max}"/>. Se realizan 50 replicas para cada combinación de los parámetros definidos. Tomando como referencia la solución <img src="https://latex.codecogs.com/gif.latex?g(\boldsymbol{x}^*"/> que obtiene el máximo valor posible, es decir <img src="https://latex.codecogs.com/gif.latex?g(\boldsymbol{x}^*)\approx&space;1.30125"/> y la solución <img src="https://latex.codecogs.com/gif.latex?\boldsymbol{x}"/> estimada por el método, se calcula la desviación relativa (gap %) de la manera siguiente:
 
 <p align="center">
-<a href="https://www.codecogs.com/eqnedit.php?latex=\mathrm{gap&space;\%}=\frac{\left&space;|&space;g-g_{\max}&space;\right&space;|}{g_{\max}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathrm{gap&space;\%}=\frac{\left&space;|&space;g-g_{\max}&space;\right&space;|}{g_{\max}}." title="\mathrm{gap \%}=\frac{\left | g-g_{\max} \right |}{g_{\max}}" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\mathrm{gap&space;\%}=\frac{\left&space;|&space;g(\boldsymbol{x})-g(\boldsymbol{x}^*)&space;\right&space;|}{g(\boldsymbol{x}^*)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathrm{gap&space;\%}=\frac{\left&space;|&space;g(\boldsymbol{x})-g(\boldsymbol{x}^*)&space;\right&space;|}{g(\boldsymbol{x}^*)}." title="\mathrm{gap \%}=\frac{\left | g(\boldsymbol{x})-g(\boldsymbol{x}^*) \right |}{g(\boldsymbol{x}^*)}" /></a>
 </p>
 
 ### Condiciones computacionales
 Instancia SO Linux (Ubuntu 16.04) 64-bits, con procesador Intel (R) Core (TM) i7-5600U CPU @ 2.60 GHz y 12 GB de memoria RAM con 2 núcleos y 4 procesadores lógicos. El <i>cluster</i> hizo uso de 3 núcleos. La aplicación se ha codificado en R, haciendo uso del paquete `doParallel` [\[3\]](#bibliograf%C3%ADa) que incluye la función `foreach`.
 
 ## Resultados
-La **figura 1** muestra la función <img src="https://latex.codecogs.com/gif.latex?\inline&g(\boldsymbol{x})"> graficada en tres dimensiones, se observa cómo los valores extremos de la función son los que alcanzan los máximos valores de la superficie.
+La **figura 1** muestra la función <img src="https://latex.codecogs.com/gif.latex?g(\boldsymbol{x})"> graficada en tres dimensiones, se observa cómo los valores extremos de la función son los que alcanzan los máximos valores de la superficie.
 
 <p align="center">
 <img src="https://github.com/dagoquevedo/parallelr/blob/master/P7/img/P7_A_2.gif" width="75%" height="75%"/><br>
 <b>Figura 1.</b> Superficie en tres dimensiones de la función <img src="https://latex.codecogs.com/gif.latex?g(\boldsymbol{x})">.
 </p>
 
-La **figura 2** refleja una ejecución de la **búsqueda local** para máximizar la función <img src="https://latex.codecogs.com/gif.latex?\inline&g(\boldsymbol{x})"> y expresada de forma plana, se observa cómo al incrementar <img src="https://latex.codecogs.com/gif.latex?t_{\max}">, los valores estimados tienden a concentrarse en los puntos extremos, reduciendo el valor de gap %.
+La **figura 2** refleja una ejecución de la **búsqueda local** para máximizar la función <img src="https://latex.codecogs.com/gif.latex?\inline&g(\boldsymbol{x})"> y expresada de forma plana, se observa cómo al incrementar <img src="https://latex.codecogs.com/gif.latex?t_{\max}">, las soluciones obtenidas tienden a concentrarse en los puntos extremos, reduciendo el valor de gap %.
 
 <p align="center">
 <img src="https://github.com/dagoquevedo/parallelr/blob/master/P7/img/P7_A_1.gif" width="60%" height="60%"/><br>
