@@ -53,11 +53,11 @@ La **figura 3** refleja una ejecución del método de **recocido simulado** para
 <b>Figura 3.</b> Iteraciones del recocido simulado para aproximar al máximo de la función <img src="https://latex.codecogs.com/gif.latex?g(\boldsymbol{x})">.
 </p>
 
-La **figura 4** muestra el resultado del experimento de los efectos de la variación de los parámetros <img src="https://latex.codecogs.com/gif.latex?T"> y <img src="https://latex.codecogs.com/gif.latex?\xi"> sobre la calidad de la solución denotada por gap, la cual esta por el promedio entre replicas para cada combinación posible de parámetros <img src="https://latex.codecogs.com/gif.latex?T"> y <img src="https://latex.codecogs.com/gif.latex?(T,\xi)">. Aquí, vemos como <img src="https://latex.codecogs.com/gif.latex?T"> tiene un efecto positivo en la disminución del gap, por otro lado al decrementar el valor de <img src="https://latex.codecogs.com/gif.latex?\xi">, el enfriamiento de <img src="https://latex.codecogs.com/gif.latex?T"> se realiza más agresivamente, por lo cual no da una mayor holgura a la selección de soluciones de forma probabilística, mejorando, aunque ligeramente en el valor del gap.
+La **figura 4** muestra el resultado del experimento de los efectos de la variación de los parámetros <img src="https://latex.codecogs.com/gif.latex?T"> y <img src="https://latex.codecogs.com/gif.latex?\xi"> sobre la calidad de la solución denotada por gap, la cual esta por el promedio entre replicas para cada combinación posible de parámetros <img src="https://latex.codecogs.com/gif.latex?T"> y <img src="https://latex.codecogs.com/gif.latex?(T,\xi)">. Aquí, vemos como <img src="https://latex.codecogs.com/gif.latex?T"> tiene un efecto positivo en la disminución del gap, por otro lado al decrementar el valor de <img src="https://latex.codecogs.com/gif.latex?\xi">, el enfriamiento de <img src="https://latex.codecogs.com/gif.latex?T"> se realiza más agresivamente, por lo que a medida que avanzan las iteraciones, aceptar soluciones poco beneficiosas es menos probable, pero sigue existiendo una probabilidad positiva de aceptarlos.
  
 <p align="center">
 <img src="https://github.com/dagoquevedo/parallelr/blob/master/P7/img/P7_B_3.png" width="95%" height="95%"/><br>
-<b>Figura 4.</b> Efectos de los parámetros <img src="https://latex.codecogs.com/gif.latex?T"> y <img src="https://latex.codecogs.com/gif.latex?\xi"> en el rendimiento del algoritmo de recocido simulado.
+<b>Figura 4.</b> Efectos de los parámetros <img src="https://latex     .codecogs.com/gif.latex?T"> y <img src="https://latex.codecogs.com/gif.latex?\xi"> en el rendimiento del algoritmo de recocido simulado.
 </p>
 
 
