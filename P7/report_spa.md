@@ -39,7 +39,7 @@ La **figura 1** muestra la función <img src="https://latex.codecogs.com/gif.lat
 <b>Figura 1.</b> Superficie en tres dimensiones de la función <img src="https://latex.codecogs.com/gif.latex?g(\boldsymbol{x})">.
 </p>
 
-La **figura 2** refleja una ejecución de la **búsqueda local** para maximizar la función <img src="https://latex.codecogs.com/gif.latex?\inline&g(\boldsymbol{x})"> y expresada de forma plana. Se observa cómo al incrementar <img src="https://latex.codecogs.com/gif.latex?t_{\max}">, las soluciones obtenidas tienden a concentrarse en los puntos extremos, reduciendo el valor del **gap**.
+La **figura 2** refleja una ejecución de la **búsqueda local** para maximizar la función <img src="https://latex.codecogs.com/gif.latex?\inline&g(\boldsymbol{x})"> y expresada de forma plana. Se observa cómo al incrementar <img src="https://latex.codecogs.com/gif.latex?t_{\max}">, las soluciones obtenidas tienden a concentrarse en los puntos extremos (cercanos al óptimo global) y puntos centrales (óptimos locales), reduciendo el valor del **gap**.
 
 <p align="center">
 <img src="https://github.com/dagoquevedo/parallelr/blob/master/P7/img/P7_A_1.gif" width="60%" height="60%"/><br>
